@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1c1c1e">
+  <meta name="color-scheme" content="light dark">
+  <!-- Applies the saved light/dark choice before the page paints (no flash). -->
+  <script src="/assets/js/theme-init.js"></script>
+  <link rel="alternate" type="application/rss+xml" title="Whole Armour lessons" href="/feed.xml">
+  <title>Whole Armour | Men's Gathering &amp; Podcast in Haverhill, MA</title>
+  <meta name="description"
+        content="Whole Armour is the men's group of Rehoboth Lighthouse Full Gospel Church in Haverhill, MA. Monthly gatherings on the second Saturday at 5:00 PM, plus the Whole Armour Podcast.">
+  <link rel="canonical" href="https://wholearmour.org/">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Whole Armour">
+  <meta property="og:title" content="Whole Armour | Men's Gathering &amp; Podcast in Haverhill, MA">
+  <meta property="og:description" content="A monthly gathering for men of faith in Haverhill, Massachusetts. Second Saturdays at 5:00 PM. Listen to the Whole Armour Podcast.">
+  <meta property="og:url" content="https://wholearmour.org/">
+  <meta property="og:image" content="https://wholearmour.org/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A knight in armour, the Whole Armour emblem">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Whole Armour | Men's Gathering &amp; Podcast in Haverhill, MA">
+  <meta name="twitter:description" content="A monthly gathering for men of faith in Haverhill, Massachusetts. Second Saturdays at 5:00 PM.">
+  <meta name="twitter:image" content="https://wholearmour.org/assets/img/og-image.jpg">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon-180.png">
+
+  <!-- Primary image: preloaded so the first card paints early (it is the LCP element on phones) -->
+  <link rel="preload" as="image" href="assets/img/knight-800.webp"
+        imagesrcset="assets/img/knight-480.webp 480w, assets/img/knight-800.webp 800w, assets/img/knight-1200.webp 1200w"
+        imagesizes="(max-width: 900px) min(100vw, 440px), 380px" type="image/webp">
+
+  <!-- Fonts: self-hosted (no font CDN). Inter is preloaded; the system font renders until it swaps in. -->
+  <link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face { font-family: 'Inter'; src: url('/assets/fonts/inter-latin-var.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Source Serif 4'; src: url('/assets/fonts/source-serif-4-latin-var.woff2') format('woff2'); font-weight: 200 900; font-style: normal; font-display: swap; }
+  </style>
+  <noscript>
+    <!-- Without JavaScript the countdown tiles would stay at "--", so they are hidden and the static schedule text below them carries the information. -->
+    <style>#cd-grid { display: none; }</style>
+  </noscript>
+
+  <!-- Structured data: the ministry and its recurring gathering (facts taken from the RLFGC calendar) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://wholearmour.org/#org",
+        "name": "Whole Armour",
+        "alternateName": "Whole Armour Men's Group",
+        "url": "https://wholearmour.org/",
+        "logo": "https://wholearmour.org/assets/img/favicon-512.png",
+        "parentOrganization": {
+          "@type": "Church",
+          "name": "Rehoboth Lighthouse Full Gospel Church",
+          "url": "https://rlfgc.com/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "409 Washington Street",
+            "addressLocality": "Haverhill",
+            "addressRegion": "MA",
+            "postalCode": "01832",
+            "addressCountry": "US"
+          }
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "Whole Armour Men's Gathering",
+        "description": "A gathering for men to connect. Second Saturday of every month at 5:00 PM.",
+        "organizer": { "@id": "https://wholearmour.org/#org" },
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "isAccessibleForFree": true,
+        "location": {
+          "@type": "Place",
+          "name": "Rehoboth Lighthouse Full Gospel Church",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "409 Washington Street",
+            "addressLocality": "Haverhill",
+            "addressRegion": "MA",
+            "postalCode": "01832",
+            "addressCountry": "US"
+          }
+        },
+        "eventSchedule": {
+          "@type": "Schedule",
+          "repeatFrequency": "P1M",
+          "byDay": "https://schema.org/Saturday",
+          "byMonthWeek": 2,
+          "startTime": "17:00",
+          "endTime": "19:00",
+          "scheduleTimezone": "America/New_York"
+        },
+        "startDate": "2026-10-10T17:00:00-04:00",
+        "endDate": "2026-10-10T19:00:00-04:00"
+      },
+      {
+        "@type": "PodcastSeries",
+        "name": "Whole Armour Podcast",
+        "url": "https://wholearmourmen.buzzsprout.com/",
+        "webFeed": "https://feeds.buzzsprout.com/2269369.rss",
+        "publisher": { "@id": "https://wholearmour.org/#org" }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+
+  /* ── RESET ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  img  { display: block; max-width: 100%; height: auto; }
+  address { font-style: normal; }
+
+  /* ── BODY ── */
+  body {
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1rem; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f5f5f7; color: #1d1d1f;
+    min-height: 100dvh;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body { background: #000; color: #f5f5f7; } }
+  :root[data-theme="dark"] body { background: #000; color: #f5f5f7; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  @media (forced-colors: active) {
+    .card, .btn-s, .btn-g, .cd-tile, .pod-ep, .footer-link { border: 2px solid ButtonText; forced-color-adjust: none; }
+    :focus-visible { outline: 3px solid Highlight; outline-offset: 3px; }
+  }
+
+  :focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; border-radius: 4px; }
+  :focus:not(:focus-visible) { outline: none; }
+
+  .skip {
+    position: absolute; left: 12px; top: -200%;
+    z-index: 99999; background: #0071e3; color: #fff;
+    font-weight: 700; font-size: 0.9375rem;
+    padding: 10px 18px; border-radius: 9999px;
+    text-decoration: none; transition: top 0.15s;
+  }
+  .skip:focus { top: 12px; }
+  #hero, #pod, #loc, #about { scroll-margin-top: 60px; }
+  .visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ════════════════════════════════════════
+     HEADER
+  ════════════════════════════════════════ */
+  .hdr-bar {
+    position: sticky; top: 0; z-index: 200; height: 56px;
+    background: rgba(14,14,16,0.94);
+    backdrop-filter: blur(22px) saturate(1.8);
+    -webkit-backdrop-filter: blur(22px) saturate(1.8);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .hdr {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    height: 100%; display: flex; align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: #f5f5f7; font-size: 0.95rem; font-weight: 900;
+    letter-spacing: 0.065em; text-decoration: none;
+    white-space: nowrap; min-height: 44px; transition: opacity 0.15s;
+  }
+  .logo:hover { opacity: 0.72; }
+  .nav { display: flex; gap: 2px; list-style: none; }
+  .nav a {
+    display: inline-flex; align-items: center; min-height: 44px;
+    color: rgba(255,255,255,0.86);
+    font-size: 0.9375rem; font-weight: 600;
+    padding: 0 14px; border-radius: 9999px;
+    text-decoration: none; transition: background 0.15s, color 0.15s;
+  }
+  .nav a:hover, .nav a:focus-visible {
+    background: rgba(255,255,255,0.10); color: #fff;
+  }
+
+  /* ════════════════════════════════════════
+     HERO
+  ════════════════════════════════════════ */
+  .hero {
+    position: relative;
+    background: #1c1c1e;
+    overflow: hidden;
+    padding: clamp(40px, 7vw, 80px) clamp(24px, 5vw, 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: clamp(340px, 46vw, 480px);
+  }
+  .hero-art { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  /* Side art: each <picture> is a positioned box with a fixed aspect (shield 7:8, helmet 35:32) so nothing shifts while it loads.
+     Treatment: a radial mask feathers the mist into the charcoal, and mix-blend-mode:screen drops the
+     images' near-black background (screen with black = unchanged page colour). Browsers without blend
+     modes fall back to the mask + a slightly stronger fade, which still hides the rectangle. */
+  .hero-img {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    /* Width comes from the free space beside the 620px text column, capped at 230px so the art
+       (a) never crosses the headline and (b) stays smaller than the Scripture card image, which keeps
+       that image, not the decoration, as the LCP element. */
+    width: clamp(150px, calc((100vw - 680px) / 2 - 24px), 230px); aspect-ratio: 7 / 8;
+    display: block; overflow: hidden;
+    -webkit-mask-image: radial-gradient(ellipse 52% 52% at 50% 50%, #000 58%, rgba(0,0,0,0) 100%);
+            mask-image: radial-gradient(ellipse 52% 52% at 50% 50%, #000 58%, rgba(0,0,0,0) 100%);
+    opacity: 0.94;
+  }
+  .hero-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .hero-img--shield { left: 3%; }
+  .hero-img--helmet { right: 3%; aspect-ratio: 35 / 32; } /* the helmet render is wider than tall; mirrored at build time to face the headline */
+  @supports (mix-blend-mode: screen) {
+    .hero-img { mix-blend-mode: screen; opacity: 1; }
+  }
+  @supports not (mix-blend-mode: screen) {
+    .hero-img { opacity: 0.85; }
+  }
+  /* Gentle fade-in once decoded; skipped entirely under prefers-reduced-motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-img img { opacity: 0; transition: opacity .5s ease-out; }
+    .hero-img img.is-loaded { opacity: 1; }
+  }
+  .hero-in {
+    position: relative; z-index: 1;
+    max-width: 620px; width: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    gap: clamp(14px, 2vw, 22px);
+  }
+  .hero-h1 {
+    font-size: clamp(2.1rem, 7.5vw, 4.6rem);
+    font-weight: 900; color: #ffffff;
+    letter-spacing: 0.065em; line-height: 1.04;
+  }
+  /* rgba(255,255,255,.86) on #1c1c1e ≈ 14:1 */
+  .hero-sub {
+    color: rgba(255,255,255,0.86);
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-weight: 500; line-height: 1.55; max-width: 34em;
+  }
+  .hero-sub strong { color: #fff; font-weight: 700; }
+
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .btn-s, .btn-g {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: inherit; font-size: 0.9375rem; font-weight: 700;
+    padding: 12px 24px; min-height: 48px; border-radius: 9999px;
+    text-decoration: none; min-width: 160px;
+    border: 2px solid transparent; cursor: pointer;
+    touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+    transition: transform 0.15s, background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  }
+  .btn-s { background: #fff; color: #1d1d1f; box-shadow: 0 2px 10px rgba(0,0,0,0.22); }
+  .btn-s:hover, .btn-s:focus-visible {
+    background: rgba(255,255,255,0.88); transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+  }
+  .btn-s:active { transform: none; }
+  .btn-g { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+  .btn-g:hover, .btn-g:focus-visible {
+    background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.75);
+    transform: translateY(-2px);
+  }
+  .btn-g:active { transform: none; }
+
+  /* ════════════════════════════════════════
+     CARDS SECTION
+  ════════════════════════════════════════ */
+  .cards-sec { padding: clamp(18px,2.5vw,32px) clamp(12px,2vw,20px); }
+  .cards-wrap { max-width: 1160px; margin: 0 auto; }
+  /* #5f5f65 on #f5f5f7 = 5.6:1 · #a1a1a6 on #000 = 8.6:1 */
+  .cards-eye {
+    font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: #5f5f65; text-align: center;
+    margin-bottom: clamp(12px,1.6vw,18px);
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cards-eye { color: #a1a1a6; } }
+  :root[data-theme="dark"] .cards-eye { color: #a1a1a6; }
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: clamp(12px,1.4vw,16px); align-items: stretch;
+  }
+
+  /* Card base — always dark. Text colours below are checked against #1c1c1e:
+     #f5f5f7 = 16.9:1 · #c7c7cc = 10.4:1 · #a1a1a6 = 6.9:1 · #6db8ff = 7.0:1 */
+  .card {
+    background: #1c1c1e; border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px; overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(0,0,0,0.46); }
+  .c-vis { position: relative; height: 175px; overflow: hidden; flex-shrink: 0; }
+  .c-bd { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .c-eye   { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #a1a1a6; }
+  .c-title { font-size: clamp(1.05rem,1.6vw,1.2rem); font-weight: 800; color: #f5f5f7; line-height: 1.28; }
+  .c-desc  { font-size: 0.9375rem; color: #c7c7cc; line-height: 1.6; }
+  .c-desc + .c-desc { margin-top: -2px; }
+  .c-lnk   {
+    color: #6db8ff; font-size: 0.9375rem; font-weight: 700; text-decoration: none;
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px;
+    margin-top: auto; align-self: flex-start;
+  }
+  .c-lnk:hover, .c-lnk:focus-visible { color: #9ed0ff; text-decoration: underline; }
+  .c-lnk + .c-lnk { margin-top: 0; }
+  .c-actions { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: auto; }
+  .c-actions .c-lnk { margin-top: 0; }
+
+  /* Card 1: Knight */
+  .vis-knight { background: #090912; }
+  .knight-img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 12%; z-index: 1;
+    filter: brightness(0.72) contrast(1.05);
+  }
+  .vis-knight::before {
+    content: ''; position: absolute; inset: 0; z-index: 2;
+    background:
+      radial-gradient(ellipse 130% 120% at 50% 50%, transparent 18%, rgba(9,9,18,0.90) 100%),
+      linear-gradient(to bottom, transparent 16%, rgba(9,9,18,0.90) 56%, #1c1c1e 100%);
+    pointer-events: none;
+  }
+  .vis-knight::after {
+    content: ''; position: absolute; bottom: 6%; left: 50%;
+    transform: translateX(-50%); width: 50%; height: 22%;
+    border-radius: 50%; background: rgba(218,165,32,0.20);
+    filter: blur(16px); z-index: 3;
+    animation: glowBr 3.5s ease-in-out infinite; pointer-events: none;
+  }
+  @keyframes glowBr {
+    0%,100%{ opacity:.42; transform:translateX(-50%) scale(1); }
+    50%    { opacity:.95; transform:translateX(-50%) scale(1.38); }
+  }
+  .sp { position: absolute; border-radius: 50%; background: #fef08a;
+        box-shadow: 0 0 5px 1.5px rgba(254,240,138,0.65);
+        z-index: 10; pointer-events: none; animation: twk 2.8s ease-in-out infinite; }
+  .sp1{width:4px;height:4px;top:17%;left:18%;animation-delay:0s}
+  .sp2{width:3px;height:3px;top:12%;right:21%;animation-delay:.5s}
+  .sp3{width:4px;height:4px;top:44%;right:13%;animation-delay:1.1s}
+  .sp4{width:3px;height:3px;top:53%;left:10%;animation-delay:1.7s}
+  .sp5{width:5px;height:5px;top:27%;left:44%;animation-delay:.8s}
+  @keyframes twk { 0%,100%{opacity:0;transform:scale(.4)} 50%{opacity:1;transform:scale(1.7)} }
+  .sc-txt { font-size: 0.9375rem; font-style: italic; color: #e5e5ea; line-height: 1.7; }
+  .sc-ref { font-size: 0.8125rem; font-style: normal; font-weight: 700; color: #a1a1a6; margin-top: 2px; display: block; }
+
+  /* Card 2: Podcast */
+  .vis-pod {
+    background-image:
+      radial-gradient(ellipse 60% 55% at 50% 50%, rgba(41,151,255,0.15) 0%, transparent 65%),
+      radial-gradient(ellipse 48% 34% at 80% 76%, rgba(99,102,241,0.10) 0%, transparent 55%);
+    background-color: #050c18;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .vis-pod::before {
+    content: ''; position: absolute; inset: 0; z-index: 1;
+    background-image: radial-gradient(circle, rgba(41,151,255,0.10) 1px, transparent 1px);
+    background-size: 20px 20px;
+    mask-image: radial-gradient(ellipse at center, black 25%, transparent 66%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 66%);
+    pointer-events: none;
+  }
+  .vis-pod::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 34%; z-index: 5;
+    background: linear-gradient(to bottom, transparent, #1c1c1e); pointer-events: none;
+  }
+  .ga { position: absolute; pointer-events: none; z-index: 2; }
+  .ga-mic    { width:38%; height:auto; bottom:-10%; left:3%;  opacity:.90; transform:rotate(-7deg); }
+  .ga-phones { width:48%; height:auto; top:-16%;   right:-2%; opacity:.75; transform:rotate(9deg); }
+  .ga-shield-pod { width:20%; height:auto; top:30%; left:52%; opacity:.45; transform:rotate(4deg); }
+  .snd-wave { display:flex; align-items:center; gap:4px; position:relative; z-index:3; padding-bottom:12px; }
+  .bar { display:block; width:4px; border-radius:3px;
+         background: linear-gradient(to top, #38bdf8, rgba(186,230,253,0.16));
+         transform-origin: bottom center; animation: bAnim 1.3s ease-in-out infinite; }
+  .b1{height:9px;animation-delay:0s}.b2{height:17px;animation-delay:.08s}
+  .b3{height:27px;animation-delay:.16s}.b4{height:38px;animation-delay:.24s}
+  .b5{height:47px;animation-delay:.32s}.b6{height:38px;animation-delay:.40s}
+  .b7{height:27px;animation-delay:.48s}.b8{height:17px;animation-delay:.56s}
+  .b9{height:9px;animation-delay:.64s}
+  @keyframes bAnim { 0%,100%{transform:scaleY(1);opacity:.95} 50%{transform:scaleY(.18);opacity:.38} }
+
+  /* Episode list (filled from the podcast feed; hidden until it has content) */
+  .pod-eps { list-style: none; display: flex; flex-direction: column; gap: 6px; margin: 2px 0 4px; }
+  .pod-ep a {
+    display: flex; flex-direction: column; gap: 2px;
+    padding: 8px 10px; min-height: 44px; border-radius: 10px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07);
+    color: #f5f5f7; text-decoration: none; font-size: 0.875rem; font-weight: 600; line-height: 1.35;
+  }
+  .pod-ep a:hover, .pod-ep a:focus-visible { background: rgba(255,255,255,0.10); text-decoration: underline; }
+  .pod-ep time { font-size: 0.8125rem; font-weight: 500; color: #a1a1a6; }
+  .pod-status { font-size: 0.875rem; color: #c7c7cc; min-height: 1.4em; }
+  .pod-sub { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+  .pod-sub a {
+    display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px;
+    border-radius: 9999px; border: 1px solid rgba(255,255,255,0.18);
+    color: #f5f5f7; font-size: 0.8125rem; font-weight: 600; text-decoration: none;
+  }
+  .pod-sub a:hover, .pod-sub a:focus-visible { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.4); }
+
+  /* Card 3: Location + Countdown */
+  .vis-loc {
+    background-image: radial-gradient(ellipse 62% 55% at 50% 50%, rgba(34,197,94,0.14) 0%, transparent 65%);
+    background-color: #04100a;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px; padding: 14px 12px 12px;
+  }
+  .vis-loc::before {
+    content: ''; position: absolute; inset: 0; z-index: 0;
+    background-image: radial-gradient(circle, rgba(34,197,94,0.10) 1px, transparent 1px);
+    background-size: 20px 20px;
+    mask-image: radial-gradient(ellipse at center, black 28%, transparent 68%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 28%, transparent 68%);
+    pointer-events: none;
+  }
+  .vis-loc > * { position: relative; z-index: 1; }
+  /* white at .78 on #04100a ≈ 13:1 */
+  .cd-lbl  { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:rgba(255,255,255,0.78); text-align:center; }
+  .cd-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; width:100%; }
+  .cd-tile { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.09); border-radius:9px; padding:8px 3px 6px; display:flex; flex-direction:column; align-items:center; gap:2px; }
+  .cd-num  { display:block; font-size:clamp(1.1rem,2.2vw,1.6rem); font-weight:900; color:#ffffff; line-height:1; font-variant-numeric:tabular-nums; }
+  .cd-unit { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.78); }
+  .cd-date { font-size:0.875rem; font-weight:600; color:rgba(255,255,255,0.86); text-align:center; min-height:1.3em; width:100%; }
+  .loc-addr { font-size: 0.9375rem; color: #c7c7cc; line-height: 1.6; }
+  .loc-addr strong { color: #f5f5f7; }
+
+  /* Footer — compact four-area layout (brand · Gather · Listen · Explore) */
+  .site-footer { background:#060d1e; color:#d0d3dc; padding: clamp(36px, 5vw, 56px) 20px 0; }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px 40px;
+    align-items: start;
+  }
+  .footer-brand { max-width: 34em; }
+  .footer-logo {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+    color: #f5f5f7; font-weight: 900; letter-spacing: 0.065em; font-size: 1.0625rem;
+    text-decoration: none;
+  }
+  .footer-logo:hover, .footer-logo:focus-visible { color: #fff; text-decoration: underline; }
+  /* #d0d3dc on #060d1e ≈ 12:1 · #9ea3b0 ≈ 6.9:1 · #f5f5f7 ≈ 18:1 */
+  .footer-brand p { font-size: 0.9375rem; line-height: 1.6; margin-top: 10px; }
+  .footer-brand p + p { margin-top: 6px; }
+  .footer-col h2 {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #9ea3b0; margin: 12px 0 8px;
+  }
+  .footer-col p, .footer-col address { font-size: 0.9375rem; line-height: 1.55; font-style: normal; color: #d0d3dc; }
+  .footer-col address { margin-top: 2px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; }
+  .footer-col li { margin: 0; }
+  .footer-link, .footer-brand a:not(.footer-logo) {
+    color: #d0d3dc; text-decoration: underline; text-decoration-color: rgba(208,211,220,0.35);
+    text-underline-offset: 3px; border-radius: 4px;
+  }
+  .footer-link {
+    display: inline-flex; align-items: center; min-height: 44px;
+    font-size: 0.9375rem; font-weight: 500; text-decoration: none;
+  }
+  .footer-link:hover, .footer-link:focus-visible,
+  .footer-brand a:not(.footer-logo):hover, .footer-brand a:not(.footer-logo):focus-visible {
+    color: #fff; text-decoration: underline; text-decoration-color: currentColor;
+  }
+  .footer-col .footer-link.strong { font-weight: 700; color: #f5f5f7; }
+  .footer-bottom {
+    max-width: 1100px; margin: clamp(28px, 4vw, 40px) auto 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 18px 0 22px; text-align: center;
+    font-size: 0.875rem; color: #9ea3b0;
+  }
+  .footer-bottom strong { color: #e5e7eb; }
+
+  /* Back to top */
+  .btt {
+    position:fixed; right:16px; bottom:18px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:rgba(28,28,30,0.92); color:#f5f5f7;
+    font-size:1.1rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none; backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.09);
+    box-shadow:0 3px 12px rgba(0,0,0,0.28);
+    opacity:0; pointer-events:none; transform:translateY(8px);
+    transition:opacity .25s, transform .25s;
+  }
+  .btt.on { opacity:1; pointer-events:auto; transform:translateY(0); }
+  .btt:hover, .btt:focus-visible { background:rgba(44,44,50,.96); transform:translateY(-2px); }
+
+  /* ════════════════════════════════════════
+     RESPONSIVE
+  ════════════════════════════════════════ */
+  @media (max-width: 1000px) {
+    .hero-in { max-width: 520px; }
+  }
+  @media (max-width: 900px) {
+    .cards-grid { grid-template-columns:1fr; max-width:480px; margin:0 auto; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
+    .footer-brand { grid-column: 1 / -1; }
+    .hero-in  { max-width: 480px; }
+    .hero-img { width: 120px; }
+    .hero-img--shield { left: 2%; }
+    .hero-img--helmet { right: 2%; }
+  }
+  @media (max-width: 600px) {
+    .hero-art   { display: none; }
+    .hero       { padding: 36px 20px; }
+    .btns       { flex-direction: column; align-items: stretch; }
+    .btn-s, .btn-g { width: 100%; min-width: unset; }
+    .cards-sec  { padding: 14px 10px; }
+    .cd-grid    { grid-template-columns: repeat(2,1fr); }
+    .footer-inner { grid-template-columns: 1fr; gap: 20px; }
+    .footer-brand { max-width: none; }
+  }
+  @media (max-width: 420px) {
+    .hdr        { padding: 0 10px; }
+    /* Narrow phones: the wordmark becomes the emblem only (its name stays for assistive tech) so the three links never wrap. */
+    .logo       { font-size: 1.3rem; }
+    .logo-text  { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+    .nav a      { padding: 0 10px; font-size: 0.875rem; }
+    .hero-h1    { font-size: 2rem; }
+  }
+
+  /* ════════════════════════════════════════
+     HEADER v2 (2026-11): five links + theme toggle.
+     Phones: links move to a scrollable second row under the logo.
+  ════════════════════════════════════════ */
+  .hdr-bar { height: auto; }
+  .hdr { flex-wrap: wrap; gap: 0 12px; height: auto; min-height: 56px; }
+  .hdr nav { order: 3; flex-basis: 100%; overflow-x: auto; scrollbar-width: none; margin: 0 -10px; padding: 0 10px; }
+  .hdr nav::-webkit-scrollbar { display: none; }
+  .nav { margin: 0; padding: 0 0 4px; }
+  .nav a { white-space: nowrap; }
+  /* Phone nav: soft fade on the right while more links are hidden (class set by site.js). */
+  .hdr nav .nav a:focus-visible { outline: 3px solid #6db8ff; outline-offset: -3px; }
+  .hdr nav.has-more { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); }
+  .theme-toggle {
+    margin-left: auto; width: 44px; height: 44px; border-radius: 9999px; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.22); background: transparent; color: #f5f5f7;
+    display: grid; place-items: center;
+  }
+  .theme-toggle:hover { background: rgba(255,255,255,0.10); }
+  .theme-toggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+  .theme-toggle .i-moon { fill: currentColor; stroke: none; }
+  .theme-toggle .i-sun { display: none; }
+  :root[data-theme-resolved="dark"] .theme-toggle .i-sun { display: block; }
+  :root[data-theme-resolved="dark"] .theme-toggle .i-moon { display: none; }
+  #hero, #pod, #loc, #about { scroll-margin-top: 112px; }
+  @media (min-width: 760px) {
+    .hdr { flex-wrap: nowrap; }
+    .hdr nav { order: 0; flex-basis: auto; margin: 0 0 0 auto; padding: 0; overflow: visible; }
+    .nav { padding: 0; }
+    .theme-toggle { margin-left: 4px; }
+    #hero, #pod, #loc, #about { scroll-margin-top: 60px; }
+  }
+  @media (max-width: 420px) {
+    .logo-text { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+    .logo { font-size: 0.95rem; }
+  }
+
+  /* ════════════════════════════════════════
+     LATEST LESSON BAND (filled in at build time)
+  ════════════════════════════════════════ */
+  .latest-band { background: #f4f1ea; color: #16181c; padding: clamp(28px, 5vw, 48px) 20px; border-bottom: 1px solid #d9d3c7; }
+  .latest-band__in { max-width: 760px; margin: 0 auto; border-left: 4px solid #8a5a1c; padding-left: clamp(16px, 3vw, 24px); }
+  .latest-band__eye { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #8a5a1c; margin-bottom: 8px; }
+  .latest-band__draft { color: #9a3412; border: 1px dashed #9a3412; border-radius: 6px; padding: 1px 7px; margin-left: 6px; letter-spacing: 0.04em; }
+  .latest-band__title { font-size: clamp(1.5rem, 5vw, 2.2rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .latest-band__title a { color: inherit; text-decoration: none; }
+  .latest-band__title a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .latest-band__meta { color: #4a4f58; font-size: 0.95rem; margin-bottom: 10px; }
+  .latest-band__idea { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(1.1rem, 3.4vw, 1.3rem); line-height: 1.45; margin-bottom: 18px; }
+  .latest-band__links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .latest-band .btn-g { color: #16181c; border-color: #6b6f78; }
+  .latest-band .btn-s { background: #16181c; color: #f5f5f7; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .latest-band .btn-s { background: #f2efe8; color: #111214; } }
+  :root[data-theme="dark"] .latest-band .btn-s { background: #f2efe8; color: #111214; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .latest-band { background: #111214; color: #f2efe8; border-color: #30343c; }
+    :root:not([data-theme="light"]) .latest-band__in { border-color: #d4a259; }
+    :root:not([data-theme="light"]) .latest-band__eye { color: #d4a259; }
+    :root:not([data-theme="light"]) .latest-band__draft { color: #fb923c; border-color: #fb923c; }
+    :root:not([data-theme="light"]) .latest-band__meta { color: #b6b9c1; }
+    :root:not([data-theme="light"]) .latest-band .btn-g { color: #f2efe8; border-color: #8b909a; }
+  }
+  :root[data-theme="dark"] .latest-band { background: #111214; color: #f2efe8; border-color: #30343c; }
+  :root[data-theme="dark"] .latest-band__in { border-color: #d4a259; }
+  :root[data-theme="dark"] .latest-band__eye { color: #d4a259; }
+  :root[data-theme="dark"] .latest-band__draft { color: #fb923c; border-color: #fb923c; }
+  :root[data-theme="dark"] .latest-band__meta { color: #b6b9c1; }
+  :root[data-theme="dark"] .latest-band .btn-g { color: #f2efe8; border-color: #8b909a; }
+
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="hdr-bar">
+    <div class="hdr">
+      <a href="#hero" class="logo">
+        <span aria-hidden="true">⚔️</span>
+        <span class="logo-text">WHOLE ARMOUR</span>
+        <span class="visually-hidden"> — back to top</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav" role="list">
+          <li><a href="/lessons/latest/">Lesson</a></li>
+          <li><a href="/lessons/">Archive</a></li>
+          <li><a href="/encouragement/">Encouragement</a></li>
+          <li><a href="/happening/">Happening</a></li>
+          <li><a href="#pod">Podcast</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" title="Switch theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="hero" class="hero" aria-labelledby="h1">
+
+      <!-- Decorative Ephesians 6 art (shield of faith · helmet of salvation): hidden from assistive tech,
+           lazy + low priority so it never becomes the LCP, sized via width/height to avoid layout shift. -->
+      <div class="hero-art" aria-hidden="true">
+        <picture class="hero-img hero-img--shield">
+          <source type="image/avif" srcset="assets/img/whole-armour-shield-480.avif 480w, assets/img/whole-armour-shield-720.avif 720w, assets/img/whole-armour-shield-960.avif 960w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
+          <source type="image/webp" srcset="assets/img/whole-armour-shield-480.webp 480w, assets/img/whole-armour-shield-720.webp 720w, assets/img/whole-armour-shield-960.webp 960w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
+          <img src="assets/img/whole-armour-shield-720.webp" width="896" height="1024" alt="" loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+        <picture class="hero-img hero-img--helmet">
+          <source type="image/avif" srcset="assets/img/whole-armour-helmet-480.avif 480w, assets/img/whole-armour-helmet-720.avif 720w, assets/img/whole-armour-helmet-960.avif 960w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
+          <source type="image/webp" srcset="assets/img/whole-armour-helmet-480.webp 480w, assets/img/whole-armour-helmet-720.webp 720w, assets/img/whole-armour-helmet-960.webp 960w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
+          <img src="assets/img/whole-armour-helmet-720.webp" width="1120" height="1024" alt="" loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+      </div><!-- /hero-art -->
+
+      <div class="hero-in">
+        <h1 class="hero-h1" id="h1">WHOLE ARMOUR</h1>
+
+        <p class="hero-sub" id="about">
+          A monthly gathering for men of faith in Haverhill, Massachusetts.
+          <strong>Second Saturdays at 5:00 PM.</strong>
+          The men's group of Rehoboth Lighthouse Full Gospel Church.
+        </p>
+
+        <div class="btns">
+          <a href="https://wholearmourmen.buzzsprout.com/"
+             class="btn-s" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">🎧</span> Start Listening<span class="visually-hidden"> to the Whole Armour Podcast (opens in a new tab)</span>
+          </a>
+          <a href="#loc" class="btn-g">
+            <span aria-hidden="true">📍</span> Find Us
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- LATEST LESSON: filled in at build time by src/build.mjs (left empty when no lesson is approved) -->
+    <section class="latest-band" aria-labelledby="latest-h">
+      <div class="latest-band__in">
+        <p class="latest-band__eye">Latest lesson</p>
+        <h2 id="latest-h" class="latest-band__title"><a href="/lessons/latest/">Identity: The Pattern Stops Here</a></h2>
+        <p class="latest-band__meta">Nov 14, 2026 · 2 Kings 22–23 · Identity</p>
+        <p class="latest-band__idea">You may have inherited the environment, but you don't have to inherit the agreement.</p>
+        <p class="latest-band__links"><a class="btn-s" href="/lessons/latest/">Read the lesson</a> <a class="btn-g" href="/lessons/">All lessons</a></p>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="cards-sec" aria-label="Explore Whole Armour">
+      <div class="cards-wrap">
+        <p class="cards-eye" aria-hidden="true">Explore</p>
+        <div class="cards-grid">
+
+          <!-- Card 1: Knight + Scripture -->
+          <article class="card" aria-labelledby="sc-h">
+            <div class="c-vis vis-knight" aria-hidden="true">
+              <picture>
+                <source type="image/avif"
+                        srcset="assets/img/knight-480.avif 480w, assets/img/knight-800.avif 800w, assets/img/knight-1200.avif 1200w"
+                        sizes="(max-width: 900px) min(100vw, 440px), 380px">
+                <source type="image/webp"
+                        srcset="assets/img/knight-480.webp 480w, assets/img/knight-800.webp 800w, assets/img/knight-1200.webp 1200w"
+                        sizes="(max-width: 900px) min(100vw, 440px), 380px">
+                <img src="assets/img/knight-800.jpg"
+                     srcset="assets/img/knight-480.jpg 480w, assets/img/knight-800.jpg 800w, assets/img/knight-1200.jpg 1200w"
+                     sizes="(max-width: 900px) min(100vw, 440px), 380px"
+                     width="800" height="656" alt=""
+                     class="knight-img" fetchpriority="high" decoding="async">
+              </picture>
+              <span class="sp sp1"></span><span class="sp sp2"></span>
+              <span class="sp sp3"></span><span class="sp sp4"></span>
+              <span class="sp sp5"></span>
+            </div>
+            <div class="c-bd">
+              <p class="c-eye">Scripture</p>
+              <h2 class="c-title" id="sc-h">The Whole Armour of God</h2>
+              <blockquote class="sc-txt">
+                "Put on the full armor of God, so that you will be able to
+                stand firm against all strategies of the devil."
+              </blockquote>
+              <cite class="sc-ref">Ephesians 6:11 (NLT)</cite>
+            </div>
+          </article>
+
+          <!-- Card 2: Podcast -->
+          <article class="card" id="pod" tabindex="-1" aria-labelledby="pod-h">
+            <div class="c-vis vis-pod" aria-hidden="true">
+              <svg class="ga ga-mic" viewBox="0 0 72 122" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <rect fill="#1a2638" x="20" y="0" width="32" height="66" rx="16"/>
+                <rect fill="#050c18" opacity=".50" x="20" y="15" width="32" height="2.5" rx="1.25"/>
+                <rect fill="#050c18" opacity=".50" x="20" y="24" width="32" height="2.5" rx="1.25"/>
+                <rect fill="#050c18" opacity=".50" x="20" y="33" width="32" height="2.5" rx="1.25"/>
+                <rect fill="#050c18" opacity=".50" x="20" y="42" width="32" height="2.5" rx="1.25"/>
+                <path fill="none" stroke="#1a2638" stroke-width="5.5" stroke-linecap="round" d="M9 51 Q9 94 36 94 Q63 94 63 51"/>
+                <rect fill="#1a2638" x="33" y="94" width="6" height="18" rx="3"/>
+                <rect fill="#1a2638" x="16" y="110" width="40" height="8" rx="4"/>
+              </svg>
+              <svg class="ga ga-phones" viewBox="0 0 110 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path fill="none" stroke="#1a2638" stroke-width="8" stroke-linecap="round" d="M14 69 Q14 11 55 11 Q96 11 96 69"/>
+                <rect fill="#1a2638" x="0"  y="57" width="26" height="38" rx="12"/>
+                <rect fill="#050c18" opacity=".55" x="5" y="63" width="16" height="26" rx="8"/>
+                <rect fill="#1a2638" x="84" y="57" width="26" height="38" rx="12"/>
+                <rect fill="#050c18" opacity=".55" x="89" y="63" width="16" height="26" rx="8"/>
+              </svg>
+              <svg class="ga ga-shield-pod" viewBox="0 0 72 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path fill="#1a2638" d="M36 2 L68 17 L68 51 Q68 73 36 86 Q4 73 4 51 L4 17 Z"/>
+                <rect fill="#050c18" x="32" y="19" width="8"  height="50" rx="4"/>
+                <rect fill="#050c18" x="15" y="34" width="42" height="8"  rx="4"/>
+              </svg>
+              <div class="snd-wave">
+                <span class="bar b1"></span><span class="bar b2"></span>
+                <span class="bar b3"></span><span class="bar b4"></span>
+                <span class="bar b5"></span><span class="bar b6"></span>
+                <span class="bar b7"></span><span class="bar b8"></span>
+                <span class="bar b9"></span>
+              </div>
+            </div>
+            <div class="c-bd">
+              <p class="c-eye">Podcast</p>
+              <h2 class="c-title" id="pod-h">Whole Armour Podcast</h2>
+              <p class="c-desc">
+                Episodes on standing firm in faith, from the Whole Armour men's group.
+              </p>
+              <p class="pod-status" id="pod-status" aria-live="polite">Loading the latest episodes…</p>
+              <ul class="pod-eps" id="pod-eps" aria-label="Latest episodes" hidden></ul>
+              <p class="visually-hidden" id="pod-newtab">Opens in a new tab</p>
+              <div class="pod-sub" role="group" aria-label="Listen on">
+                <a href="https://podcasts.apple.com/us/podcast/whole-armour-podcast/id1714305108" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Apple Podcasts</a>
+                <a href="https://open.spotify.com/show/4FY6wd5JjExdPSoIIHUrmd" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Spotify</a>
+                <a href="https://music.amazon.com/podcasts/ced2d727-59cf-4721-b629-5a24afc1cda6" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Amazon Music</a>
+                <a href="https://feeds.buzzsprout.com/2269369.rss" aria-describedby="pod-newtab">RSS</a>
+              </div>
+              <a href="https://wholearmourmen.buzzsprout.com/"
+                 class="c-lnk" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">
+                All episodes on Buzzsprout ›
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Next gathering + Location -->
+          <article class="card" id="loc" tabindex="-1" aria-labelledby="loc-h">
+            <div class="c-vis vis-loc">
+              <p class="cd-lbl" id="cd-lbl">Next gathering</p>
+              <div class="cd-grid" id="cd-grid" role="timer" aria-labelledby="cd-lbl" aria-hidden="true">
+                <div class="cd-tile"><span class="cd-num" id="cd-d">--</span><span class="cd-unit">Days</span></div>
+                <div class="cd-tile"><span class="cd-num" id="cd-h">--</span><span class="cd-unit">Hrs</span></div>
+                <div class="cd-tile"><span class="cd-num" id="cd-m">--</span><span class="cd-unit">Min</span></div>
+                <div class="cd-tile"><span class="cd-num" id="cd-s">--</span><span class="cd-unit">Sec</span></div>
+              </div>
+              <!-- Static text is always present; the script replaces it with the exact next date. -->
+              <p class="cd-date" id="cd-date" aria-live="polite" aria-atomic="true">Second Saturday of every month · 5:00 PM</p>
+            </div>
+            <div class="c-bd">
+              <p class="c-eye">Location</p>
+              <h2 class="c-title" id="loc-h">Rehoboth Lighthouse Full Gospel Church</h2>
+              <address class="loc-addr">
+                <strong>409 Washington Street</strong><br>
+                Haverhill, MA 01832
+              </address>
+              <p class="c-desc">
+                A gathering for men to connect. Second Saturday of every month, 5:00 PM.
+              </p>
+              <div class="c-actions">
+                <a href="https://maps.google.com/?q=409+Washington+Street,+Haverhill,+MA+01832"
+                   class="c-lnk" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">
+                  Get directions ›
+                </a>
+                <a href="whole-armour.ics" class="c-lnk" download="whole-armour.ics">
+                  Add to calendar ›
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <a href="#hero" class="btt" id="btt" aria-label="Back to top">↑</a>
+
+  </main>
+
+  <footer id="sf" class="site-footer">
+    <div class="footer-inner">
+
+      <section class="footer-brand" aria-labelledby="ft-brand-h">
+        <h2 id="ft-brand-h" class="visually-hidden">About Whole Armour</h2>
+        <a class="footer-logo" href="#hero"><span aria-hidden="true">⚔️</span> WHOLE ARMOUR</a>
+        <p>A monthly gathering for men of faith in Haverhill, Massachusetts.</p>
+        <p>The men's group of <a href="https://rlfgc.com/" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Rehoboth Lighthouse Full Gospel Church</a>.</p>
+      </section>
+
+      <section class="footer-col" aria-labelledby="ft-gather-h">
+        <h2 id="ft-gather-h">Gather</h2>
+        <p><strong>Second Saturdays at 5:00 PM</strong></p>
+        <address>409 Washington Street<br>Haverhill, MA 01832</address>
+        <ul role="list">
+          <li><a class="footer-link" href="https://maps.google.com/?q=409+Washington+Street,+Haverhill,+MA+01832" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Get directions</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col" aria-labelledby="ft-listen-h">
+        <h2 id="ft-listen-h">Listen</h2>
+        <ul role="list">
+          <li><a class="footer-link" href="https://wholearmourmen.buzzsprout.com/" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Podcast</a></li>
+          <li><a class="footer-link" href="https://podcasts.apple.com/us/podcast/whole-armour-podcast/id1714305108" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Apple Podcasts</a></li>
+          <li><a class="footer-link" href="https://open.spotify.com/show/4FY6wd5JjExdPSoIIHUrmd" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Spotify</a></li>
+          <li><a class="footer-link" href="https://music.amazon.com/podcasts/ced2d727-59cf-4721-b629-5a24afc1cda6" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Amazon Music</a></li>
+          <li><a class="footer-link" href="https://feeds.buzzsprout.com/2269369.rss">RSS feed</a></li>
+        </ul>
+      </section>
+
+      <nav class="footer-col" aria-labelledby="ft-explore-h">
+        <h2 id="ft-explore-h">Explore</h2>
+        <ul role="list">
+          <li><a class="footer-link" href="#hero">Home</a></li>
+          <li><a class="footer-link" href="#pod">Podcast</a></li>
+          <li><a class="footer-link" href="#loc">Location</a></li>
+          <li><a class="footer-link" href="https://maps.google.com/?q=409+Washington+Street,+Haverhill,+MA+01832" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">Directions</a></li>
+          <li><a class="footer-link" href="https://rlfgc.com/" target="_blank" rel="noopener noreferrer" aria-describedby="pod-newtab">RLFGC.com</a></li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="yr">2026</span> <strong>WholeArmour.org</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  'use strict';
+
+  /* ── COUNTDOWN (enhancement: the static schedule text is always in the HTML) ── */
+  (function () {
+    const $ = id => document.getElementById(id);
+    const grid = $('cd-grid'), dateEl = $('cd-date');
+    if (!grid || !dateEl) return;
+    const z = n => String(n).padStart(2, '0');
+    function sat2(y, m) {
+      const d = new Date(y, m, 1); let n = 0;
+      while (n < 2) { if (d.getDay() === 6) n++; if (n < 2) d.setDate(d.getDate() + 1); }
+      d.setHours(17, 0, 0, 0); return d;
+    }
+    function next() {
+      const now = new Date(); let y = now.getFullYear(), m = now.getMonth();
+      let ev = sat2(y, m);
+      if (Date.now() >= ev.getTime() + 7_200_000) {
+        if (++m > 11) { m = 0; y++; } ev = sat2(y, m);
+      }
+      return ev;
+    }
+    let t = next(), tm, lastDay = null;
+    const fmt = d => d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' }) + ' · 5:00 PM';
+    function tick() {
+      const diff = t - Date.now();
+      if (diff <= 0) {
+        if (Date.now() < t.getTime() + 7_200_000) {
+          ['cd-d','cd-h','cd-m','cd-s'].forEach(id => $(id).textContent = '🎉');
+          dateEl.textContent = 'Happening now — ' + fmt(t);
+        } else { t = next(); lastDay = null; tick(); }
+        return;
+      }
+      const days = Math.floor(diff / 86_400_000);
+      $('cd-d').textContent = z(days);
+      $('cd-h').textContent = z(Math.floor(diff % 86_400_000 / 3_600_000));
+      $('cd-m').textContent = z(Math.floor(diff % 3_600_000  / 60_000));
+      $('cd-s').textContent = z(Math.floor(diff % 60_000     / 1_000));
+      /* The live region only changes when the day count changes, never every second. */
+      if (days !== lastDay) {
+        lastDay = days;
+        dateEl.textContent = fmt(t);
+        grid.setAttribute('aria-label', 'Countdown: ' + days + ' days to the next gathering');
+      }
+    }
+    tick(); tm = setInterval(tick, 1000);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) clearInterval(tm);
+      else { tick(); tm = setInterval(tick, 1000); }
+    });
+  }());
+
+  /* ── PODCAST: latest 3 episodes from the public feed (no credentials involved) ── */
+  (function () {
+    const status = document.getElementById('pod-status');
+    const list = document.getElementById('pod-eps');
+    if (!status || !list || !window.fetch || !window.DOMParser) return;
+    const FEED = 'https://feeds.buzzsprout.com/2269369.rss';
+    const ctl = new AbortController();
+    const timer = setTimeout(() => ctl.abort(), 8000);
+    fetch(FEED, { signal: ctl.signal })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+      .then(xml => {
+        const doc = new DOMParser().parseFromString(xml, 'text/xml');
+        if (doc.querySelector('parsererror')) throw new Error('bad feed');
+        const items = [...doc.querySelectorAll('item')].slice(0, 3);
+        if (!items.length) { status.textContent = 'No episodes have been published yet.'; return; }
+        for (const it of items) {
+          const title = (it.querySelector('title') || {}).textContent || 'Untitled episode';
+          const link  = (it.querySelector('link')  || {}).textContent || 'https://wholearmourmen.buzzsprout.com/';
+          const pub   = (it.querySelector('pubDate') || {}).textContent;
+          const d = pub ? new Date(pub) : null;
+          const li = document.createElement('li'); li.className = 'pod-ep';
+          const a = document.createElement('a');
+          a.href = link.trim(); a.target = '_blank'; a.rel = 'noopener noreferrer';
+          a.setAttribute('aria-describedby', 'pod-newtab');
+          a.appendChild(document.createTextNode(title.trim()));
+          if (d && !isNaN(d)) {
+            a.appendChild(document.createTextNode(' '));
+            const tEl = document.createElement('time');
+            tEl.dateTime = d.toISOString().slice(0, 10);
+            tEl.textContent = d.toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
+            a.appendChild(tEl);
+          }
+          li.appendChild(a); list.appendChild(li);
+        }
+        list.hidden = false;
+        status.textContent = 'Latest episodes';
+      })
+      .catch(() => {
+        status.textContent = 'The episode list is unavailable right now. Use the links below to listen.';
+      })
+      .finally(() => clearTimeout(timer));
+  }());
+
+  /* ── BACK TO TOP ── */
+  (function () {
+    const b = document.getElementById('btt');
+    if (!b) return;
+    const u = () => {
+      const y = window.scrollY;
+      const near = y + window.innerHeight + 100 >= document.body.scrollHeight;
+      b.classList.toggle('on', y > 200 && !near);
+    };
+    window.addEventListener('scroll', u, { passive: true });
+    u();
+  }());
+
+  /* ── FOOTER YEAR ── */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.hero-img img').forEach(function (im) {
+    var done = function () { im.classList.add('is-loaded'); };
+    if (im.complete && im.naturalWidth) done(); else { im.addEventListener('load', done, { once: true }); im.addEventListener('error', done, { once: true }); }
+  });
+  </script>
+
+  <!-- Shared: theme toggle (src/assets/js/site.js) -->
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

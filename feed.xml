@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Whole Armour lessons</title>
+    <link>https://wholearmour.org/lessons/</link>
+    <atom:link href="https://wholearmour.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Lessons from the Whole Armour men's gathering in Haverhill, MA.</description>
+    <language>en-us</language>
+    <item>
+      <title>Identity: The Pattern Stops Here</title>
+      <link>https://wholearmour.org/lessons/identity-the-pattern-stops-here/</link>
+      <guid isPermaLink="true">https://wholearmour.org/lessons/identity-the-pattern-stops-here/</guid>
+      <pubDate>Sat, 14 Nov 2026 22:00:00 GMT</pubDate>
+      <description>Josiah inherited a broken pattern from his father and grandfather, and he broke it. Three truths about identity, God's Word and passing faith on.</description>
+      <category>Identity</category>
+    </item>
+  </channel>
+</rss>

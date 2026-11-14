@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1c1c1e">
+  <title>Page not found | Whole Armour</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #1c1c1e; color: #f5f5f7; line-height: 1.6;
+      min-height: 100dvh; display: flex; flex-direction: column;
+    }
+    :focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; border-radius: 4px; }
+    .skip { position: absolute; left: 12px; top: -200%; background: #0071e3; color: #fff; font-weight: 700;
+            padding: 10px 18px; border-radius: 9999px; text-decoration: none; }
+    .skip:focus { top: 12px; }
+    header { height: 56px; background: rgba(14,14,16,0.94); border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; padding: 0 20px; }
+    .logo { color: #f5f5f7; font-weight: 900; letter-spacing: 0.065em; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 20px; text-align: center; }
+    .box { max-width: 560px; width: 100%; }
+    .code { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #a1a1a6; margin-bottom: 10px; }
+    h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 14px; }
+    p { color: #c7c7cc; font-size: 1.0625rem; margin-bottom: 26px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px;
+           border-radius: 9999px; font-weight: 700; font-size: 0.9375rem; text-decoration: none; min-width: 160px;
+           border: 2px solid rgba(255,255,255,0.45); color: #fff; }
+    .btn.primary { background: #fff; color: #1d1d1f; border-color: transparent; }
+    .btn:hover, .btn:focus-visible { background: rgba(255,255,255,0.12); }
+    .btn.primary:hover, .btn.primary:focus-visible { background: rgba(255,255,255,0.88); }
+    footer { padding: 20px; text-align: center; font-size: 0.875rem; color: #9ea3b0; background: #060d1e; }
+    footer a { color: #8ec5ff; }
+    @media (max-width: 600px) { .btns { flex-direction: column; align-items: stretch; } .btn { min-width: 0; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    @media (forced-colors: active) { .btn { border: 2px solid ButtonText; forced-color-adjust: none; } }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <header>
+    <a href="/" class="logo"><span aria-hidden="true">⚔️</span> WHOLE ARMOUR</a>
+  </header>
+  <main id="main">
+    <div class="box">
+      <p class="code">Error 404</p>
+      <h1>That page isn't here.</h1>
+      <p>The link may be old or mistyped. Everything on wholearmour.org lives on the home page.</p>
+      <div class="btns">
+        <a class="btn primary" href="/">Go to the home page</a>
+        <a class="btn" href="/#pod">Podcast</a>
+        <a class="btn" href="/#loc">Next gathering &amp; location</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Whole Armour is the men's group of <a href="https://rlfgc.com/">Rehoboth Lighthouse Full Gospel Church</a>, Haverhill, MA.
+  </footer>
+</body>
+</html>

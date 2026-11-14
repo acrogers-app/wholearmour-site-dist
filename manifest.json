@@ -1,0 +1,265 @@
+{
+  "preview": false,
+  "files": [
+    {
+      "path": ".htaccess",
+      "sha256": "e4be902afa07d5f5fd09172b2002af58dfc1749c46c113fac19e42a0e6cb483a",
+      "bytes": 1807
+    },
+    {
+      "path": "404.html",
+      "sha256": "3fcdc8ae9838502782b0eff8f4077278bf180cf406aea5d6d2b473b7c55ea5b8",
+      "bytes": 3726
+    },
+    {
+      "path": "assets/css/site.css",
+      "sha256": "835b994892d73a1f1a088725c8f72340654b98453b3798f4df54acc3736a9304",
+      "bytes": 14442
+    },
+    {
+      "path": "assets/fonts/OFL-Inter.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "bytes": 4377
+    },
+    {
+      "path": "assets/fonts/OFL-SourceSerif4.txt",
+      "sha256": "5f94c3fd3a23131a417ab5a0c8452de57e70c3cfb9f604d88241f7065ebf9fd9",
+      "bytes": 4400
+    },
+    {
+      "path": "assets/fonts/README.txt",
+      "sha256": "a95c6d221b794cb884162f819e8a998fbd9cb50012fc4f6979044304845e0e36",
+      "bytes": 1041
+    },
+    {
+      "path": "assets/fonts/inter-latin-var.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "bytes": 48432
+    },
+    {
+      "path": "assets/fonts/source-serif-4-latin-var-italic.woff2",
+      "sha256": "4dbf6638832394945c054a76dee4f9ced221d1c52a4ce6a29ecc4195232f966b",
+      "bytes": 51720
+    },
+    {
+      "path": "assets/fonts/source-serif-4-latin-var.woff2",
+      "sha256": "8e38e3fbd74dea20aabe0831ffef04c9f30bf6fc5b99b7a2649be0dd8c6d859c",
+      "bytes": 50952
+    },
+    {
+      "path": "assets/img/apple-touch-icon-180.png",
+      "sha256": "50e3887df42ac905c2fd87aa5e3f98000594854d3a06558fc0a60cabd0c8cff1",
+      "bytes": 57649
+    },
+    {
+      "path": "assets/img/favicon-192.png",
+      "sha256": "b8a7a292eb975510060a815d863ff84644891dd88e51ef001f62d4f1f965975e",
+      "bytes": 65077
+    },
+    {
+      "path": "assets/img/favicon-32.png",
+      "sha256": "26bd24fcd17dbf5e5e334b427a0bff34d5df48e34fd86a2aae8b4cd0a28e68f5",
+      "bytes": 2499
+    },
+    {
+      "path": "assets/img/favicon-512.png",
+      "sha256": "81f3f5db709de6b2928fbc820ee5e0d73fe3f20a2c363f1bfe0e03727066cb5d",
+      "bytes": 405367
+    },
+    {
+      "path": "assets/img/knight-1200.avif",
+      "sha256": "29ac766700ec4115383b1a6779e99a1a4c132b79312d612516facc161ce34fe0",
+      "bytes": 76885
+    },
+    {
+      "path": "assets/img/knight-1200.jpg",
+      "sha256": "d2cfb9526f35a9c0ca6a9a3af5d50a3332826814378cb86d44228c287f680daf",
+      "bytes": 115979
+    },
+    {
+      "path": "assets/img/knight-1200.webp",
+      "sha256": "b3ccd7eca6ac59984517c9e4acaf1582196200d623c91e01ad77901c6c2576f2",
+      "bytes": 76630
+    },
+    {
+      "path": "assets/img/knight-480.avif",
+      "sha256": "470a50b9e3af9fd57da0f21f9cc7baa35a1286a67a84845d5668d5b7bb80e136",
+      "bytes": 17114
+    },
+    {
+      "path": "assets/img/knight-480.jpg",
+      "sha256": "69690c092f16d6a29fd4bc84f2b8fac4fe5d7695be86ec376eed813ff735d768",
+      "bytes": 25579
+    },
+    {
+      "path": "assets/img/knight-480.webp",
+      "sha256": "18598d88957634976292d47efe26f48358360fe825ea07200f5571d13d0fa28e",
+      "bytes": 17182
+    },
+    {
+      "path": "assets/img/knight-800.avif",
+      "sha256": "d3a49617bdc297723b2ba2df49e600a81200071122592c68ab62b6ba63684378",
+      "bytes": 38869
+    },
+    {
+      "path": "assets/img/knight-800.jpg",
+      "sha256": "d4524baac7b27b08afd830c2f20fe215cd29a6c0f17a29dfae917c16bdfed45b",
+      "bytes": 58670
+    },
+    {
+      "path": "assets/img/knight-800.webp",
+      "sha256": "02136212ad472b6b26cbea457509e8753c7e8652b274189697035640638f5641",
+      "bytes": 39772
+    },
+    {
+      "path": "assets/img/og-image.jpg",
+      "sha256": "ea145539b39a717655ef126f9cc3c63e8ab3f25143020737af173e49d125e270",
+      "bytes": 103594
+    },
+    {
+      "path": "assets/img/whole-armour-helmet-480.avif",
+      "sha256": "6c443e550741e429e59158702a6940b706204d6c5e3cea98137282299079f92e",
+      "bytes": 10155
+    },
+    {
+      "path": "assets/img/whole-armour-helmet-480.webp",
+      "sha256": "ffc8d11379acae6d2b34c306889e8521512bead2dc4d1354b0527706b4080862",
+      "bytes": 14552
+    },
+    {
+      "path": "assets/img/whole-armour-helmet-720.avif",
+      "sha256": "a641673ad49cd12c167e47d8a038810887db9b89f7c4f0dd700d3024e64dd280",
+      "bytes": 21794
+    },
+    {
+      "path": "assets/img/whole-armour-helmet-720.webp",
+      "sha256": "84dbb8f7ca7e049167cae7f4ce252266913a160b0ecc2bfccbb9eb6e5642e674",
+      "bytes": 30366
+    },
+    {
+      "path": "assets/img/whole-armour-helmet-960.avif",
+      "sha256": "c9de328d59ea492790c695f8c20b08ada0ace69d00e197fdda8a6e8d0a91bd98",
+      "bytes": 34505
+    },
+    {
+      "path": "assets/img/whole-armour-helmet-960.webp",
+      "sha256": "4f32cc59859dcd4dbd73a621cd8d247651eebab90bab8d3e4d62a755aba2313a",
+      "bytes": 50232
+    },
+    {
+      "path": "assets/img/whole-armour-shield-480.avif",
+      "sha256": "533bd3a07d4e59981516a2ec1acb85a849ef59cc38635d0f6a9b34b92a0bd223",
+      "bytes": 12189
+    },
+    {
+      "path": "assets/img/whole-armour-shield-480.webp",
+      "sha256": "6f6b96f469e25624ec60a92e64b6535253dfe389dc769d937f50e9f79d016a2d",
+      "bytes": 18898
+    },
+    {
+      "path": "assets/img/whole-armour-shield-720.avif",
+      "sha256": "48347be77ba6c521bb98f9c97d423d3c3784a6c04367f1642718793a0b1582df",
+      "bytes": 27812
+    },
+    {
+      "path": "assets/img/whole-armour-shield-720.webp",
+      "sha256": "e7000b9644405e2fb806be8f05a224361301bab9531245cc620274ef2bd8642d",
+      "bytes": 41454
+    },
+    {
+      "path": "assets/img/whole-armour-shield-960.avif",
+      "sha256": "87ab45aca316d0cbd067f1eb5f01dc0a6be897a62de79a5d91948058f432b0f5",
+      "bytes": 42768
+    },
+    {
+      "path": "assets/img/whole-armour-shield-960.webp",
+      "sha256": "d4480e8c0bbf3e1d17e3bbf248c415c5faef0fb0ef1d2bdea025e2ba76ff782d",
+      "bytes": 66522
+    },
+    {
+      "path": "assets/js/archive.js",
+      "sha256": "bec0dee62c15049d3c64a3621bd819111af31ed0929a8a57cdc202ac19ce73cf",
+      "bytes": 1417
+    },
+    {
+      "path": "assets/js/happening.js",
+      "sha256": "3ee66f731b9e9c293f2866fffb1012fa016f78d85cc28bd5bc0463a30833449e",
+      "bytes": 1176
+    },
+    {
+      "path": "assets/js/lesson.js",
+      "sha256": "de8aa21082879a2e1aa51577c3c8d18052c99507eacba20ee3284de14dd27ea2",
+      "bytes": 1610
+    },
+    {
+      "path": "assets/js/site.js",
+      "sha256": "17aff3d98f5e964a3d0d249e9cf00b7bdf6f0efd1da10260385135530595d060",
+      "bytes": 3589
+    },
+    {
+      "path": "assets/js/theme-init.js",
+      "sha256": "adea41ba5ba850838cdf6fd9084194986b95552d99e2216a54ea444d82eeb775",
+      "bytes": 586
+    },
+    {
+      "path": "build.json",
+      "sha256": "b1bb10d7c4aa7b6033d8daa1d0288a764324986b29162abab2efe734df5b3399",
+      "bytes": 93
+    },
+    {
+      "path": "encouragement/index.html",
+      "sha256": "17f240237814bae5c391810efd99da38b2d979693589b1969c2c7c23cd3372f0",
+      "bytes": 5401
+    },
+    {
+      "path": "feed.xml",
+      "sha256": "634b3540f77eb8c770f3477e378680ab861a78bec5baa0cb34579f40ee8529d1",
+      "bytes": 977
+    },
+    {
+      "path": "happening/index.html",
+      "sha256": "92a8ff57e3bad7c280b952da4beb56ab96835cf3aae076ed6b725a51ee24df13",
+      "bytes": 5675
+    },
+    {
+      "path": "index.html",
+      "sha256": "28501ebcdc6c7729a219fa40d9ea9b39f0b1c0476d2455a6e12fe079174fd7fa",
+      "bytes": 54140
+    },
+    {
+      "path": "lessons/identity-the-pattern-stops-here/files/2026-11-14-identity-the-pattern-stops-here.pdf",
+      "sha256": "528add14fcdedb49fb954b299941ec70f976cfe8ca70f6cf9aab576398c06395",
+      "bytes": 80439
+    },
+    {
+      "path": "lessons/identity-the-pattern-stops-here/index.html",
+      "sha256": "2079d5de743bda5f5ed6de4cb8a95daabab6c144e91119613a2d050ea31f1d31",
+      "bytes": 15893
+    },
+    {
+      "path": "lessons/index.html",
+      "sha256": "6ee26f9bd18b0ac6eff6593b68818261c37c54ac8896fa8d69676ed0a7f42104",
+      "bytes": 5232
+    },
+    {
+      "path": "lessons/latest/index.html",
+      "sha256": "13003fcfedb7e828dfb297c732c76cdae18dc5e22ed63306a4c7146731c837f0",
+      "bytes": 15923
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "7f5e748180aa3ba456408c0eea776f7ca8bb12cbdd81394355754643829bafdc",
+      "bytes": 107
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "d89b0950151ae6dd2884cb22ce43a9692d0653ec96a532d11861f08e8d0c217d",
+      "bytes": 543
+    },
+    {
+      "path": "whole-armour.ics",
+      "sha256": "1e0a13d21dba08f699de10fb6c011ff1b32cbcc1d8421c00ab43e5578b1426af",
+      "bytes": 973
+    }
+  ]
+}
