@@ -13,8 +13,8 @@
     },
     {
       "path": "assets/css/site.css",
-      "sha256": "835b994892d73a1f1a088725c8f72340654b98453b3798f4df54acc3736a9304",
-      "bytes": 14442
+      "sha256": "5111c945ba46084b76be82ca8a2c83de9ff9b3a34ee9df9b81ed2837fde97675",
+      "bytes": 14671
     },
     {
       "path": "assets/fonts/OFL-Inter.txt",
@@ -208,8 +208,8 @@
     },
     {
       "path": "encouragement/index.html",
-      "sha256": "17f240237814bae5c391810efd99da38b2d979693589b1969c2c7c23cd3372f0",
-      "bytes": 5401
+      "sha256": "504e5128bbe56607abd40c6a4ad2b59eb8f08c87fa221f1499c2af8f2e7cb844",
+      "bytes": 5403
     },
     {
       "path": "feed.xml",
@@ -218,8 +218,8 @@
     },
     {
       "path": "happening/index.html",
-      "sha256": "92a8ff57e3bad7c280b952da4beb56ab96835cf3aae076ed6b725a51ee24df13",
-      "bytes": 5675
+      "sha256": "754b8fc126ed619412dbc1aa8030538d218b1651d04aad61eb05f499c120758d",
+      "bytes": 5677
     },
     {
       "path": "index.html",
@@ -233,18 +233,18 @@
     },
     {
       "path": "lessons/identity-the-pattern-stops-here/index.html",
-      "sha256": "2079d5de743bda5f5ed6de4cb8a95daabab6c144e91119613a2d050ea31f1d31",
-      "bytes": 15893
+      "sha256": "f9ced81c2599b96216dc92b0499d628bcc8c2528a5336bb6fbbf22558975d9a5",
+      "bytes": 15895
     },
     {
       "path": "lessons/index.html",
-      "sha256": "6ee26f9bd18b0ac6eff6593b68818261c37c54ac8896fa8d69676ed0a7f42104",
-      "bytes": 5232
+      "sha256": "385a7c7ac97af228a5e0a953a8adca76d29fc314791e88f58a69f3c5dd2b9ec2",
+      "bytes": 5234
     },
     {
       "path": "lessons/latest/index.html",
-      "sha256": "13003fcfedb7e828dfb297c732c76cdae18dc5e22ed63306a4c7146731c837f0",
-      "bytes": 15923
+      "sha256": "5391cd79908603753601fde69ffaa9e35903fb90a2fb5a480eafdf0dc205b734",
+      "bytes": 15925
     },
     {
       "path": "robots.txt",
