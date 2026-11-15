@@ -132,11 +132,42 @@
     font-size: 1rem; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #f5f5f7; color: #1d1d1f;
+    background: var(--wa-bg); color: var(--wa-text);
     min-height: 100dvh;
   }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body { background: #000; color: #f5f5f7; } }
-  :root[data-theme="dark"] body { background: #000; color: #f5f5f7; }
+  /* Theme: the toggle (data-theme) and the device setting drive the same variables, as in site.css.
+     Light = the site's Parchment palette. Dark = this page's original dark values (unchanged).
+     The header, hero, footer and the three card artwork panels stay dark in both themes on purpose
+     (the hero and panel artwork have dark backgrounds built in; header/footer match the inner pages). */
+  :root {
+    color-scheme: light;
+    --wa-bg: #f4f1ea; --wa-text: #16181c; --wa-muted: #4a4f58; --wa-soft: #2b2f36;
+    --wa-surface: #fffdf8; --wa-border: #d9d3c7; --wa-control: #6b6f78;
+    --wa-link: #8a5a1c; --wa-link-hover: #6b4413;
+    --wa-tint: rgba(22,24,28,0.04); --wa-tint-hover: rgba(22,24,28,0.08);
+    --wa-shadow: rgba(22,24,28,0.08); --wa-shadow-hover: rgba(22,24,28,0.16);
+    --wa-btt-bg: rgba(255,253,248,0.94); --wa-btt-hover: #efe9dc; --wa-btt-border: #d9d3c7; --wa-chip-hover: #16181c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --wa-bg: #000; --wa-text: #f5f5f7; --wa-muted: #a1a1a6; --wa-soft: #e5e5ea; --wa-desc: #c7c7cc;
+      --wa-surface: #1c1c1e; --wa-border: rgba(255,255,255,0.07); --wa-control: rgba(255,255,255,0.18);
+      --wa-link: #6db8ff; --wa-link-hover: #9ed0ff;
+      --wa-tint: rgba(255,255,255,0.05); --wa-tint-hover: rgba(255,255,255,0.10);
+      --wa-shadow: rgba(0,0,0,0.28); --wa-shadow-hover: rgba(0,0,0,0.46);
+      --wa-btt-bg: rgba(28,28,30,0.92); --wa-btt-hover: rgba(44,44,50,0.96); --wa-btt-border: rgba(255,255,255,0.09); --wa-chip-hover: rgba(255,255,255,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --wa-bg: #000; --wa-text: #f5f5f7; --wa-muted: #a1a1a6; --wa-soft: #e5e5ea; --wa-desc: #c7c7cc;
+    --wa-surface: #1c1c1e; --wa-border: rgba(255,255,255,0.07); --wa-control: rgba(255,255,255,0.18);
+    --wa-link: #6db8ff; --wa-link-hover: #9ed0ff;
+    --wa-tint: rgba(255,255,255,0.05); --wa-tint-hover: rgba(255,255,255,0.10);
+    --wa-shadow: rgba(0,0,0,0.28); --wa-shadow-hover: rgba(0,0,0,0.46);
+    --wa-btt-bg: rgba(28,28,30,0.92); --wa-btt-hover: rgba(44,44,50,0.96); --wa-btt-border: rgba(255,255,255,0.09); --wa-chip-hover: rgba(255,255,255,0.4);
+  }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -293,42 +324,41 @@
   ════════════════════════════════════════ */
   .cards-sec { padding: clamp(18px,2.5vw,32px) clamp(12px,2vw,20px); }
   .cards-wrap { max-width: 1160px; margin: 0 auto; }
-  /* #5f5f65 on #f5f5f7 = 5.6:1 · #a1a1a6 on #000 = 8.6:1 */
+  /* #4a4f58 on #f4f1ea = 7.4:1 · #a1a1a6 on #000 = 8.6:1 */
   .cards-eye {
     font-size: 0.75rem; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.18em;
-    color: #5f5f65; text-align: center;
+    color: var(--wa-muted); text-align: center;
     margin-bottom: clamp(12px,1.6vw,18px);
   }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cards-eye { color: #a1a1a6; } }
-  :root[data-theme="dark"] .cards-eye { color: #a1a1a6; }
   .cards-grid {
     display: grid; grid-template-columns: repeat(3,1fr);
     gap: clamp(12px,1.4vw,16px); align-items: stretch;
   }
 
-  /* Card base — always dark. Text colours below are checked against #1c1c1e:
-     #f5f5f7 = 16.9:1 · #c7c7cc = 10.4:1 · #a1a1a6 = 6.9:1 · #6db8ff = 7.0:1 */
+  /* Card base follows the theme (the artwork panel at the top of each card stays dark).
+     Dark, on #1c1c1e: #f5f5f7 = 16.9:1 · #c7c7cc = 10.4:1 · #a1a1a6 = 6.9:1 · #6db8ff = 7.0:1
+     Light, on #fffdf8: #16181c = 17.5:1 · #2b2f36 = 13.3:1 · #4a4f58 = 8.1:1 · #8a5a1c = 6.2:1 */
   .card {
-    background: #1c1c1e; border: 1px solid rgba(255,255,255,0.07);
+    background: var(--wa-surface); border: 1px solid var(--wa-border);
     border-radius: 18px; overflow: hidden;
     display: flex; flex-direction: column;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.28);
+    box-shadow: 0 2px 14px var(--wa-shadow);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(0,0,0,0.46); }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px var(--wa-shadow-hover); }
   .c-vis { position: relative; height: 175px; overflow: hidden; flex-shrink: 0; }
   .c-bd { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-  .c-eye   { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #a1a1a6; }
-  .c-title { font-size: clamp(1.05rem,1.6vw,1.2rem); font-weight: 800; color: #f5f5f7; line-height: 1.28; }
-  .c-desc  { font-size: 0.9375rem; color: #c7c7cc; line-height: 1.6; }
+  .c-eye   { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wa-muted); }
+  .c-title { font-size: clamp(1.05rem,1.6vw,1.2rem); font-weight: 800; color: var(--wa-text); line-height: 1.28; }
+  .c-desc  { font-size: 0.9375rem; color: var(--wa-desc, var(--wa-muted)); line-height: 1.6; }
   .c-desc + .c-desc { margin-top: -2px; }
   .c-lnk   {
-    color: #6db8ff; font-size: 0.9375rem; font-weight: 700; text-decoration: none;
+    color: var(--wa-link); font-size: 0.9375rem; font-weight: 700; text-decoration: none;
     display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px;
     margin-top: auto; align-self: flex-start;
   }
-  .c-lnk:hover, .c-lnk:focus-visible { color: #9ed0ff; text-decoration: underline; }
+  .c-lnk:hover, .c-lnk:focus-visible { color: var(--wa-link-hover); text-decoration: underline; }
   .c-lnk + .c-lnk { margin-top: 0; }
   .c-actions { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: auto; }
   .c-actions .c-lnk { margin-top: 0; }
@@ -367,8 +397,8 @@
   .sp4{width:3px;height:3px;top:53%;left:10%;animation-delay:1.7s}
   .sp5{width:5px;height:5px;top:27%;left:44%;animation-delay:.8s}
   @keyframes twk { 0%,100%{opacity:0;transform:scale(.4)} 50%{opacity:1;transform:scale(1.7)} }
-  .sc-txt { font-size: 0.9375rem; font-style: italic; color: #e5e5ea; line-height: 1.7; }
-  .sc-ref { font-size: 0.8125rem; font-style: normal; font-weight: 700; color: #a1a1a6; margin-top: 2px; display: block; }
+  .sc-txt { font-size: 0.9375rem; font-style: italic; color: var(--wa-soft); line-height: 1.7; }
+  .sc-ref { font-size: 0.8125rem; font-style: normal; font-weight: 700; color: var(--wa-muted); margin-top: 2px; display: block; }
 
   /* Card 2: Podcast */
   .vis-pod {
@@ -411,19 +441,19 @@
   .pod-ep a {
     display: flex; flex-direction: column; gap: 2px;
     padding: 8px 10px; min-height: 44px; border-radius: 10px;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07);
-    color: #f5f5f7; text-decoration: none; font-size: 0.875rem; font-weight: 600; line-height: 1.35;
+    background: var(--wa-tint); border: 1px solid var(--wa-border);
+    color: var(--wa-text); text-decoration: none; font-size: 0.875rem; font-weight: 600; line-height: 1.35;
   }
-  .pod-ep a:hover, .pod-ep a:focus-visible { background: rgba(255,255,255,0.10); text-decoration: underline; }
-  .pod-ep time { font-size: 0.8125rem; font-weight: 500; color: #a1a1a6; }
-  .pod-status { font-size: 0.875rem; color: #c7c7cc; min-height: 1.4em; }
+  .pod-ep a:hover, .pod-ep a:focus-visible { background: var(--wa-tint-hover); text-decoration: underline; }
+  .pod-ep time { font-size: 0.8125rem; font-weight: 500; color: var(--wa-muted); }
+  .pod-status { font-size: 0.875rem; color: var(--wa-desc, var(--wa-muted)); min-height: 1.4em; }
   .pod-sub { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
   .pod-sub a {
     display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px;
-    border-radius: 9999px; border: 1px solid rgba(255,255,255,0.18);
-    color: #f5f5f7; font-size: 0.8125rem; font-weight: 600; text-decoration: none;
+    border-radius: 9999px; border: 1px solid var(--wa-control);
+    color: var(--wa-text); font-size: 0.8125rem; font-weight: 600; text-decoration: none;
   }
-  .pod-sub a:hover, .pod-sub a:focus-visible { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.4); }
+  .pod-sub a:hover, .pod-sub a:focus-visible { background: var(--wa-tint-hover); border-color: var(--wa-chip-hover); }
 
   /* Card 3: Location + Countdown */
   .vis-loc {
@@ -449,8 +479,8 @@
   .cd-num  { display:block; font-size:clamp(1.1rem,2.2vw,1.6rem); font-weight:900; color:#ffffff; line-height:1; font-variant-numeric:tabular-nums; }
   .cd-unit { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.78); }
   .cd-date { font-size:0.875rem; font-weight:600; color:rgba(255,255,255,0.86); text-align:center; min-height:1.3em; width:100%; }
-  .loc-addr { font-size: 0.9375rem; color: #c7c7cc; line-height: 1.6; }
-  .loc-addr strong { color: #f5f5f7; }
+  .loc-addr { font-size: 0.9375rem; color: var(--wa-desc, var(--wa-muted)); line-height: 1.6; }
+  .loc-addr strong { color: var(--wa-text); }
 
   /* Footer — compact four-area layout (brand · Gather · Listen · Explore) */
   .site-footer { background:#060d1e; color:#d0d3dc; padding: clamp(36px, 5vw, 56px) 20px 0; }
@@ -502,17 +532,17 @@
   .btt {
     position:fixed; right:16px; bottom:18px; z-index:999;
     width:44px; height:44px; border-radius:50%;
-    background:rgba(28,28,30,0.92); color:#f5f5f7;
+    background:var(--wa-btt-bg); color:var(--wa-text);
     font-size:1.1rem; font-weight:700;
     display:flex; align-items:center; justify-content:center;
     text-decoration:none; backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,0.09);
-    box-shadow:0 3px 12px rgba(0,0,0,0.28);
+    border:1px solid var(--wa-btt-border);
+    box-shadow:0 3px 12px var(--wa-shadow);
     opacity:0; pointer-events:none; transform:translateY(8px);
     transition:opacity .25s, transform .25s;
   }
   .btt.on { opacity:1; pointer-events:auto; transform:translateY(0); }
-  .btt:hover, .btt:focus-visible { background:rgba(44,44,50,.96); transform:translateY(-2px); }
+  .btt:hover, .btt:focus-visible { background:var(--wa-btt-hover); transform:translateY(-2px); }
 
   /* ════════════════════════════════════════
      RESPONSIVE

@@ -3,13 +3,13 @@
   "files": [
     {
       "path": ".htaccess",
-      "sha256": "1266d3deb184eb84a6d6962e3cce5ca2b8ed5d3980d036a4b12b5ef603acb820",
+      "sha256": "2a083f845898eee675064320701d1e3f6288100bf4be622f3e842a6b2dee623b",
       "bytes": 2897
     },
     {
       "path": "404.html",
-      "sha256": "3fcdc8ae9838502782b0eff8f4077278bf180cf406aea5d6d2b473b7c55ea5b8",
-      "bytes": 3726
+      "sha256": "79f99e4a20970b3b71b282689021e130a69bdaf2afbd6b99107a14222a130642",
+      "bytes": 4895
     },
     {
       "path": "assets/css/site.css",
@@ -223,8 +223,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "28501ebcdc6c7729a219fa40d9ea9b39f0b1c0476d2455a6e12fe079174fd7fa",
-      "bytes": 54140
+      "sha256": "a9ca87f112fff9668afb643d39f8b1e422baeda4ffc0ed0bdab1949e79c3ac7a",
+      "bytes": 56296
     },
     {
       "path": "lessons/identity-the-pattern-stops-here/files/2026-11-14-identity-the-pattern-stops-here.pdf",
