@@ -22,7 +22,7 @@ AddType text/calendar .ics
   # browser console; nothing is blocked). Inline <script>/<style> blocks are allowed only by SHA-256
   # hash; src/check.mjs fails the build if a page's inline code no longer matches a hash below.
   # The homepage's podcast list reads the Buzzsprout RSS feed (feeds. redirects to rss.).
-  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'sha256-5AmAnFObNJmZ7ovuyOna3QreDbdf0E7pGZMsGzlpYMQ='; style-src 'self' 'sha256-slsTWrip39XyJo37e129UadMhqHVP9gDMWgYwDH90Ko=' 'sha256-BPiq145LbFc2UlnvFZN0NLd2iDxP/fhBPBiAwvzeAGE=' 'sha256-htKwZjcEo5s1Qv6cPi1aUxdAVdoFKK9wmdRnjGEOI5A=' 'sha256-qumUm63IXB4USDYwRUxrj67fVT3WHPPVl6FFkGxaSNk='; img-src 'self'; font-src 'self'; connect-src 'self' https://feeds.buzzsprout.com https://rss.buzzsprout.com; manifest-src 'self'; media-src 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'sha256-5AmAnFObNJmZ7ovuyOna3QreDbdf0E7pGZMsGzlpYMQ='; style-src 'self' 'sha256-slsTWrip39XyJo37e129UadMhqHVP9gDMWgYwDH90Ko=' 'sha256-BPiq145LbFc2UlnvFZN0NLd2iDxP/fhBPBiAwvzeAGE=' 'sha256-lM0ST1hUxT5bBqZ5bGTsqgzybEjpCaFy9ATtmkPqpT0=' 'sha256-PhoucfvuO5xOBWRngVWgx7kuYjOGJo+CWCE6fGL9pd0='; img-src 'self'; font-src 'self'; connect-src 'self' https://feeds.buzzsprout.com https://rss.buzzsprout.com; manifest-src 'self'; media-src 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
 
   # HTML: always revalidate so updates land immediately; static assets: long cache.
   <FilesMatch "\.(html|shtml)$">

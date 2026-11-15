@@ -9,6 +9,8 @@
   function paint() {
     var r = resolved();
     root.setAttribute('data-theme-resolved', r);
+    var tc = document.querySelector('meta[name="theme-color"][data-dark]');
+    if (tc) tc.setAttribute('content', r === 'dark' ? tc.getAttribute('data-dark') : '#fffdf8');
     document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
       var next = r === 'dark' ? 'light' : 'dark';
       b.setAttribute('aria-label', 'Switch to ' + next + ' mode');

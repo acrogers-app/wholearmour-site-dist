@@ -12,16 +12,22 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { -webkit-text-size-adjust: 100%; }
-    /* Theme: the toggle's saved choice (theme-init.js) or the device setting. Header/footer stay dark. */
+    /* Theme: the toggle's saved choice (theme-init.js) or the device setting. */
     :root { color-scheme: light; --bg: #f4f1ea; --text: #16181c; --muted: #4a4f58; --soft: #2b2f36;
             --btn-border: #6b6f78; --btn-text: #16181c; --btn-hover: rgba(22,24,28,0.08);
-            --pri-bg: #16181c; --pri-text: #f5f5f7; --pri-hover: #2b2f36; }
+            --pri-bg: #16181c; --pri-text: #f5f5f7; --pri-hover: #2b2f36;
+            --hdr-bg: rgba(255,253,248,0.94); --hdr-border: #d9d3c7; --logo: #16181c;
+            --ftr-bg: #efe9dc; --ftr-text: #4a4f58; --ftr-link: #7a4f17; }
     @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --bg: #1c1c1e; --text: #f5f5f7; --muted: #a1a1a6; --soft: #c7c7cc;
             --btn-border: rgba(255,255,255,0.45); --btn-text: #fff; --btn-hover: rgba(255,255,255,0.12);
-            --pri-bg: #fff; --pri-text: #1d1d1f; --pri-hover: rgba(255,255,255,0.88); } }
+            --pri-bg: #fff; --pri-text: #1d1d1f; --pri-hover: rgba(255,255,255,0.88);
+            --hdr-bg: rgba(14,14,16,0.94); --hdr-border: rgba(255,255,255,0.06); --logo: #f5f5f7;
+            --ftr-bg: #060d1e; --ftr-text: #9ea3b0; --ftr-link: #8ec5ff; } }
     :root[data-theme="dark"] { color-scheme: dark; --bg: #1c1c1e; --text: #f5f5f7; --muted: #a1a1a6; --soft: #c7c7cc;
             --btn-border: rgba(255,255,255,0.45); --btn-text: #fff; --btn-hover: rgba(255,255,255,0.12);
-            --pri-bg: #fff; --pri-text: #1d1d1f; --pri-hover: rgba(255,255,255,0.88); }
+            --pri-bg: #fff; --pri-text: #1d1d1f; --pri-hover: rgba(255,255,255,0.88);
+            --hdr-bg: rgba(14,14,16,0.94); --hdr-border: rgba(255,255,255,0.06); --logo: #f5f5f7;
+            --ftr-bg: #060d1e; --ftr-text: #9ea3b0; --ftr-link: #8ec5ff; }
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg); color: var(--text); line-height: 1.6;
@@ -31,8 +37,8 @@
     .skip { position: absolute; left: 12px; top: -200%; background: #0071e3; color: #fff; font-weight: 700;
             padding: 10px 18px; border-radius: 9999px; text-decoration: none; }
     .skip:focus { top: 12px; }
-    header { height: 56px; background: rgba(14,14,16,0.94); border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; padding: 0 20px; }
-    .logo { color: #f5f5f7; font-weight: 900; letter-spacing: 0.065em; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+    header { height: 56px; background: var(--hdr-bg); border-bottom: 1px solid var(--hdr-border); display: flex; align-items: center; padding: 0 20px; }
+    .logo { color: var(--logo); font-weight: 900; letter-spacing: 0.065em; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
     main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 20px; text-align: center; }
     .box { max-width: 560px; width: 100%; }
     .code { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
@@ -45,8 +51,8 @@
     .btn.primary { background: var(--pri-bg); color: var(--pri-text); border-color: transparent; }
     .btn:hover, .btn:focus-visible { background: var(--btn-hover); }
     .btn.primary:hover, .btn.primary:focus-visible { background: var(--pri-hover); }
-    footer { padding: 20px; text-align: center; font-size: 0.875rem; color: #9ea3b0; background: #060d1e; }
-    footer a { color: #8ec5ff; }
+    footer { padding: 20px; text-align: center; font-size: 0.875rem; color: var(--ftr-text); background: var(--ftr-bg); }
+    footer a { color: var(--ftr-link); }
     @media (max-width: 600px) { .btns { flex-direction: column; align-items: stretch; } .btn { min-width: 0; } }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
     @media (forced-colors: active) { .btn { border: 2px solid ButtonText; forced-color-adjust: none; } }

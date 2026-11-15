@@ -3,18 +3,18 @@
   "files": [
     {
       "path": ".htaccess",
-      "sha256": "2a083f845898eee675064320701d1e3f6288100bf4be622f3e842a6b2dee623b",
+      "sha256": "4429bb1dcac2eb18c92a6da41a019f8f6e09a0961de4ce9e8577ae1fb4a9ad62",
       "bytes": 2897
     },
     {
       "path": "404.html",
-      "sha256": "79f99e4a20970b3b71b282689021e130a69bdaf2afbd6b99107a14222a130642",
-      "bytes": 4895
+      "sha256": "81e6ffa3ae26e293dbe2032229e00b07da3d20f943b058a8d2cde370bf48143c",
+      "bytes": 5386
     },
     {
       "path": "assets/css/site.css",
-      "sha256": "5111c945ba46084b76be82ca8a2c83de9ff9b3a34ee9df9b81ed2837fde97675",
-      "bytes": 14671
+      "sha256": "e71f061c2f6c77637893c5815f81d164a3af44748a67bfbe170841e08e22e390",
+      "bytes": 16001
     },
     {
       "path": "assets/fonts/OFL-Inter.txt",
@@ -193,13 +193,13 @@
     },
     {
       "path": "assets/js/site.js",
-      "sha256": "17aff3d98f5e964a3d0d249e9cf00b7bdf6f0efd1da10260385135530595d060",
-      "bytes": 3589
+      "sha256": "eb58bcee72769ad4fb37ad56028a77b570c0d9c37db64469f325b2398ed98a8d",
+      "bytes": 3762
     },
     {
       "path": "assets/js/theme-init.js",
-      "sha256": "adea41ba5ba850838cdf6fd9084194986b95552d99e2216a54ea444d82eeb775",
-      "bytes": 586
+      "sha256": "8441be51854819087a8fa504d1961dd0ef9bd33acc56d9033fbfd52315c20742",
+      "bytes": 930
     },
     {
       "path": "build.json",
@@ -223,8 +223,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "a9ca87f112fff9668afb643d39f8b1e422baeda4ffc0ed0bdab1949e79c3ac7a",
-      "bytes": 56296
+      "sha256": "0fbd278088d272b5ada42387016202824aaf7a8ee7c7422a3f00abed6850563d",
+      "bytes": 58165
     },
     {
       "path": "lessons/identity-the-pattern-stops-here/files/2026-11-14-identity-the-pattern-stops-here.pdf",
