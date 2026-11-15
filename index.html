@@ -6,7 +6,20 @@
   <meta name="theme-color" content="#1c1c1e">
   <meta name="color-scheme" content="light dark">
   <!-- Applies the saved light/dark choice before the page paints (no flash). -->
-  <script src="/assets/js/theme-init.js"></script>
+  <script>/* Runs in <head> before the page paints, so there is no flash of the wrong theme.
+   A saved choice ("light"/"dark") wins; otherwise the device setting is used. */
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('wa-theme'); } catch (e) {}
+  var root = document.documentElement;
+  if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+  var dark = saved ? saved === 'dark' : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  root.setAttribute('data-theme-resolved', dark ? 'dark' : 'light');
+  /* Browser bar colour follows the header: the page's own (dark) value in dark, Parchment in light. */
+  var m = document.querySelector('meta[name="theme-color"]');
+  if (m) { if (!m.hasAttribute('data-dark')) m.setAttribute('data-dark', m.getAttribute('content')); m.setAttribute('content', dark ? m.getAttribute('data-dark') : '#fffdf8'); }
+})();
+</script>
   <link rel="alternate" type="application/rss+xml" title="Whole Armour lessons" href="/feed.xml">
   <title>Whole Armour | Men's Gathering &amp; Podcast in Haverhill, MA</title>
   <meta name="description"
@@ -33,8 +46,9 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon-180.png">
 
-  <!-- Primary image: preloaded so the first card paints early (it is the LCP element on phones) -->
-  <link rel="preload" as="image" href="assets/img/knight-800.webp"
+  <!-- Primary card image: preloaded on wider screens only. On phones it sits below the fold and the LCP is
+       the hero text, so a high-priority preload there would only compete with the fonts. -->
+  <link rel="preload" as="image" media="(min-width: 601px)" href="assets/img/knight-800.webp"
         imagesrcset="assets/img/knight-480.webp 480w, assets/img/knight-800.webp 800w, assets/img/knight-1200.webp 1200w"
         imagesizes="(max-width: 900px) min(100vw, 440px), 380px" type="image/webp">
 
@@ -137,8 +151,8 @@
   }
   /* Theme: the toggle (data-theme) and the device setting drive the same variables, as in site.css.
      Light = the site's Parchment palette. Dark = this page's original dark values (unchanged).
-     The hero and the three card artwork panels stay dark in both themes on purpose
-     (their artwork has dark backgrounds built in). The header and footer follow the theme. */
+     The three card artwork panels stay dark in both themes on purpose
+     (their artwork has dark backgrounds built in). Header, hero and footer follow the theme. */
   :root {
     color-scheme: light;
     --wa-bg: #f4f1ea; --wa-text: #16181c; --wa-muted: #4a4f58; --wa-soft: #2b2f36;
@@ -152,6 +166,10 @@
     --wa-toggle-border: #6b6f78; --wa-toggle-text: #16181c;
     --wa-ftr-bg: #efe9dc; --wa-ftr-text: #2b2f36; --wa-ftr-head: #4a4f58; --wa-ftr-strong: #16181c;
     --wa-ftr-line: rgba(43,47,54,0.35); --wa-ftr-hover: #16181c; --wa-ftr-rule: rgba(22,24,28,0.12); --wa-ftr-bottom: #4a4f58;
+    --wa-hero-bg: #ece6d9; --wa-hero-h1: #16181c; --wa-hero-sub: #2b2f36; --wa-hero-strong: #16181c;
+    --wa-bs-bg: #16181c; --wa-bs-text: #f5f5f7; --wa-bs-hover: #2b2f36; --wa-bs-shadow: rgba(22,24,28,0.18); --wa-bs-shadow-h: rgba(22,24,28,0.26);
+    --wa-bg-text: #16181c; --wa-bg-border: #6b6f78; --wa-bg-hover: rgba(22,24,28,0.06); --wa-bg-border-h: #16181c;
+    --wa-art-filter: drop-shadow(0 14px 18px rgba(22,24,28,0.22)); --wa-art-mist: none;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -167,6 +185,10 @@
       --wa-toggle-border: rgba(255,255,255,0.22); --wa-toggle-text: #f5f5f7;
       --wa-ftr-bg: #060d1e; --wa-ftr-text: #d0d3dc; --wa-ftr-head: #9ea3b0; --wa-ftr-strong: #f5f5f7;
       --wa-ftr-line: rgba(208,211,220,0.35); --wa-ftr-hover: #fff; --wa-ftr-rule: rgba(255,255,255,0.08); --wa-ftr-bottom: #9ea3b0; --wa-ftr-strong-b: #e5e7eb;
+      --wa-hero-bg: #1c1c1e; --wa-hero-h1: #ffffff; --wa-hero-sub: rgba(255,255,255,0.86); --wa-hero-strong: #fff;
+      --wa-bs-bg: #fff; --wa-bs-text: #1d1d1f; --wa-bs-hover: rgba(255,255,255,0.88); --wa-bs-shadow: rgba(0,0,0,0.22); --wa-bs-shadow-h: rgba(0,0,0,0.30);
+      --wa-bg-text: #fff; --wa-bg-border: rgba(255,255,255,0.45); --wa-bg-hover: rgba(255,255,255,0.09); --wa-bg-border-h: rgba(255,255,255,0.75);
+      --wa-art-filter: drop-shadow(0 10px 16px rgba(0,0,0,0.45)); --wa-art-mist: radial-gradient(closest-side, rgba(70,128,206,0.60), rgba(70,128,206,0.24) 55%, rgba(70,128,206,0) 100%);
     }
   }
   :root[data-theme="dark"] {
@@ -182,6 +204,10 @@
     --wa-toggle-border: rgba(255,255,255,0.22); --wa-toggle-text: #f5f5f7;
     --wa-ftr-bg: #060d1e; --wa-ftr-text: #d0d3dc; --wa-ftr-head: #9ea3b0; --wa-ftr-strong: #f5f5f7;
     --wa-ftr-line: rgba(208,211,220,0.35); --wa-ftr-hover: #fff; --wa-ftr-rule: rgba(255,255,255,0.08); --wa-ftr-bottom: #9ea3b0; --wa-ftr-strong-b: #e5e7eb;
+    --wa-hero-bg: #1c1c1e; --wa-hero-h1: #ffffff; --wa-hero-sub: rgba(255,255,255,0.86); --wa-hero-strong: #fff;
+    --wa-bs-bg: #fff; --wa-bs-text: #1d1d1f; --wa-bs-hover: rgba(255,255,255,0.88); --wa-bs-shadow: rgba(0,0,0,0.22); --wa-bs-shadow-h: rgba(0,0,0,0.30);
+    --wa-bg-text: #fff; --wa-bg-border: rgba(255,255,255,0.45); --wa-bg-hover: rgba(255,255,255,0.09); --wa-bg-border-h: rgba(255,255,255,0.75);
+    --wa-art-filter: drop-shadow(0 10px 16px rgba(0,0,0,0.45)); --wa-art-mist: radial-gradient(closest-side, rgba(70,128,206,0.60), rgba(70,128,206,0.24) 55%, rgba(70,128,206,0) 100%);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -253,7 +279,7 @@
   ════════════════════════════════════════ */
   .hero {
     position: relative;
-    background: #1c1c1e;
+    background: var(--wa-hero-bg);
     overflow: hidden;
     padding: clamp(40px, 7vw, 80px) clamp(24px, 5vw, 56px);
     display: flex;
@@ -262,30 +288,20 @@
     min-height: clamp(340px, 46vw, 480px);
   }
   .hero-art { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-  /* Side art: each <picture> is a positioned box with a fixed aspect (shield 7:8, helmet 35:32) so nothing shifts while it loads.
-     Treatment: a radial mask feathers the mist into the charcoal, and mix-blend-mode:screen drops the
-     images' near-black background (screen with black = unchanged page colour). Browsers without blend
-     modes fall back to the mask + a slightly stronger fade, which still hides the rectangle. */
+  /* Side art: transparent images (no mask, no blend mode). Each <picture> has a fixed width and the
+     image's own aspect ratio (via width/height), so nothing shifts while it loads. Widths come from the
+     free space beside the 620px text column, capped so the art (a) never crosses the headline and
+     (b) stays smaller than the Scripture card image, which keeps that image as the LCP element.
+     The theme sets the depth: a soft grounding shadow in light, a cool glow (like the old mist) in dark. */
   .hero-img {
     position: absolute; top: 50%; transform: translateY(-50%);
-    /* Width comes from the free space beside the 620px text column, capped at 230px so the art
-       (a) never crosses the headline and (b) stays smaller than the Scripture card image, which keeps
-       that image, not the decoration, as the LCP element. */
-    width: clamp(150px, calc((100vw - 680px) / 2 - 24px), 230px); aspect-ratio: 7 / 8;
-    display: block; overflow: hidden;
-    -webkit-mask-image: radial-gradient(ellipse 52% 52% at 50% 50%, #000 58%, rgba(0,0,0,0) 100%);
-            mask-image: radial-gradient(ellipse 52% 52% at 50% 50%, #000 58%, rgba(0,0,0,0) 100%);
-    opacity: 0.94;
+    display: block; filter: var(--wa-art-filter);
   }
-  .hero-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .hero-img--shield { left: 3%; }
-  .hero-img--helmet { right: 3%; aspect-ratio: 35 / 32; } /* the helmet render is wider than tall; mirrored at build time to face the headline */
-  @supports (mix-blend-mode: screen) {
-    .hero-img { mix-blend-mode: screen; opacity: 1; }
-  }
-  @supports not (mix-blend-mode: screen) {
-    .hero-img { opacity: 0.85; }
-  }
+  /* Dark theme only: a soft blue mist behind the art (a plain gradient, like the old baked-in mist). */
+  .hero-img::before { content: ''; position: absolute; inset: -22% -30%; z-index: -1; background: var(--wa-art-mist); }
+  .hero-img img { position: relative; display: block; width: 100%; height: auto; }
+  .hero-img--shield { left: 3%; width: clamp(110px, calc((100vw - 680px) * 0.37 - 18px), 170px); }
+  .hero-img--helmet { right: 3%; width: clamp(150px, calc((100vw - 680px) / 2 - 24px), 230px); }
   /* Gentle fade-in once decoded; skipped entirely under prefers-reduced-motion. */
   @media (prefers-reduced-motion: no-preference) {
     .hero-img img { opacity: 0; transition: opacity .5s ease-out; }
@@ -300,16 +316,16 @@
   }
   .hero-h1 {
     font-size: clamp(2.1rem, 7.5vw, 4.6rem);
-    font-weight: 900; color: #ffffff;
+    font-weight: 900; color: var(--wa-hero-h1);
     letter-spacing: 0.065em; line-height: 1.04;
   }
-  /* rgba(255,255,255,.86) on #1c1c1e ≈ 14:1 */
+  /* Dark: rgba(255,255,255,.86) on #1c1c1e ≈ 14:1 · Light: #2b2f36 on #ece6d9 ≈ 10.9:1 */
   .hero-sub {
-    color: rgba(255,255,255,0.86);
+    color: var(--wa-hero-sub);
     font-size: clamp(1rem, 1.6vw, 1.15rem);
     font-weight: 500; line-height: 1.55; max-width: 34em;
   }
-  .hero-sub strong { color: #fff; font-weight: 700; }
+  .hero-sub strong { color: var(--wa-hero-strong); font-weight: 700; }
 
   .btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
   .btn-s, .btn-g {
@@ -321,15 +337,15 @@
     touch-action: manipulation; -webkit-tap-highlight-color: transparent;
     transition: transform 0.15s, background 0.15s, border-color 0.15s, box-shadow 0.15s;
   }
-  .btn-s { background: #fff; color: #1d1d1f; box-shadow: 0 2px 10px rgba(0,0,0,0.22); }
+  .btn-s { background: var(--wa-bs-bg); color: var(--wa-bs-text); box-shadow: 0 2px 10px var(--wa-bs-shadow); }
   .btn-s:hover, .btn-s:focus-visible {
-    background: rgba(255,255,255,0.88); transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+    background: var(--wa-bs-hover); transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--wa-bs-shadow-h);
   }
   .btn-s:active { transform: none; }
-  .btn-g { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+  .btn-g { background: transparent; color: var(--wa-bg-text); border-color: var(--wa-bg-border); }
   .btn-g:hover, .btn-g:focus-visible {
-    background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.75);
+    background: var(--wa-bg-hover); border-color: var(--wa-bg-border-h);
     transform: translateY(-2px);
   }
   .btn-g:active { transform: none; }
@@ -571,9 +587,8 @@
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
     .footer-brand { grid-column: 1 / -1; }
     .hero-in  { max-width: 480px; }
-    .hero-img { width: 120px; }
-    .hero-img--shield { left: 2%; }
-    .hero-img--helmet { right: 2%; }
+    .hero-img--shield { left: 2%; width: 88px; }
+    .hero-img--helmet { right: 2%; width: 120px; }
   }
   @media (max-width: 600px) {
     .hero-art   { display: none; }
@@ -698,18 +713,19 @@
     <!-- HERO -->
     <section id="hero" class="hero" aria-labelledby="h1">
 
-      <!-- Decorative Ephesians 6 art (shield of faith · helmet of salvation): hidden from assistive tech,
+      <!-- Decorative Ephesians 6 art (shield of faith · helmet of salvation): a Roman scutum with a cross and a
+           Roman galea, on real transparent backgrounds so they sit on either theme. Hidden from assistive tech,
            lazy + low priority so it never becomes the LCP, sized via width/height to avoid layout shift. -->
       <div class="hero-art" aria-hidden="true">
         <picture class="hero-img hero-img--shield">
-          <source type="image/avif" srcset="assets/img/whole-armour-shield-480.avif 480w, assets/img/whole-armour-shield-720.avif 720w, assets/img/whole-armour-shield-960.avif 960w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
-          <source type="image/webp" srcset="assets/img/whole-armour-shield-480.webp 480w, assets/img/whole-armour-shield-720.webp 720w, assets/img/whole-armour-shield-960.webp 960w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
-          <img src="assets/img/whole-armour-shield-720.webp" width="896" height="1024" alt="" loading="lazy" decoding="async" fetchpriority="low">
+          <source type="image/avif" srcset="assets/img/whole-armour-scutum-180.avif 180w, assets/img/whole-armour-scutum-360.avif 360w, assets/img/whole-armour-scutum-540.avif 540w" sizes="(min-width: 1188px) 170px, (min-width: 1001px) calc((100vw - 680px) * 0.37 - 18px), (min-width: 901px) 110px, 88px">
+          <source type="image/webp" srcset="assets/img/whole-armour-scutum-180.webp 180w, assets/img/whole-armour-scutum-360.webp 360w, assets/img/whole-armour-scutum-540.webp 540w" sizes="(min-width: 1188px) 170px, (min-width: 1001px) calc((100vw - 680px) * 0.37 - 18px), (min-width: 901px) 110px, 88px">
+          <img src="assets/img/whole-armour-scutum-360.webp" width="540" height="891" alt="" loading="lazy" decoding="async" fetchpriority="low">
         </picture>
         <picture class="hero-img hero-img--helmet">
-          <source type="image/avif" srcset="assets/img/whole-armour-helmet-480.avif 480w, assets/img/whole-armour-helmet-720.avif 720w, assets/img/whole-armour-helmet-960.avif 960w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
-          <source type="image/webp" srcset="assets/img/whole-armour-helmet-480.webp 480w, assets/img/whole-armour-helmet-720.webp 720w, assets/img/whole-armour-helmet-960.webp 960w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
-          <img src="assets/img/whole-armour-helmet-720.webp" width="1120" height="1024" alt="" loading="lazy" decoding="async" fetchpriority="low">
+          <source type="image/avif" srcset="assets/img/whole-armour-galea-240.avif 240w, assets/img/whole-armour-galea-480.avif 480w, assets/img/whole-armour-galea-720.avif 720w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
+          <source type="image/webp" srcset="assets/img/whole-armour-galea-240.webp 240w, assets/img/whole-armour-galea-480.webp 480w, assets/img/whole-armour-galea-720.webp 720w" sizes="(min-width: 1188px) 230px, (min-width: 1001px) calc((100vw - 680px) / 2 - 24px), (min-width: 901px) 150px, 120px">
+          <img src="assets/img/whole-armour-galea-480.webp" width="720" height="796" alt="" loading="lazy" decoding="async" fetchpriority="low">
         </picture>
       </div><!-- /hero-art -->
 
@@ -766,7 +782,7 @@
                      srcset="assets/img/knight-480.jpg 480w, assets/img/knight-800.jpg 800w, assets/img/knight-1200.jpg 1200w"
                      sizes="(max-width: 900px) min(100vw, 440px), 380px"
                      width="800" height="656" alt=""
-                     class="knight-img" fetchpriority="high" decoding="async">
+                     class="knight-img" loading="lazy" decoding="async">
               </picture>
               <span class="sp sp1"></span><span class="sp sp2"></span>
               <span class="sp sp3"></span><span class="sp sp4"></span>

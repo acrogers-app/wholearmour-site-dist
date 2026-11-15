@@ -3,8 +3,8 @@
   "files": [
     {
       "path": ".htaccess",
-      "sha256": "4429bb1dcac2eb18c92a6da41a019f8f6e09a0961de4ce9e8577ae1fb4a9ad62",
-      "bytes": 2897
+      "sha256": "313fde39d778bc08bd7370f37abe60094b751394f47bbbca9e199a85eaa0dea5",
+      "bytes": 2951
     },
     {
       "path": "404.html",
@@ -117,64 +117,64 @@
       "bytes": 103594
     },
     {
-      "path": "assets/img/whole-armour-helmet-480.avif",
-      "sha256": "6c443e550741e429e59158702a6940b706204d6c5e3cea98137282299079f92e",
-      "bytes": 10155
+      "path": "assets/img/whole-armour-galea-240.avif",
+      "sha256": "9dff20168f1e53e8897271ba8fe31a5e11f05a06ea3da5333544513f428a2193",
+      "bytes": 9420
     },
     {
-      "path": "assets/img/whole-armour-helmet-480.webp",
-      "sha256": "ffc8d11379acae6d2b34c306889e8521512bead2dc4d1354b0527706b4080862",
-      "bytes": 14552
+      "path": "assets/img/whole-armour-galea-240.webp",
+      "sha256": "1d5a6f0aafe4192635e9f01d181699c67736a12b5b054cfb99101271bb1e656b",
+      "bytes": 13554
     },
     {
-      "path": "assets/img/whole-armour-helmet-720.avif",
-      "sha256": "a641673ad49cd12c167e47d8a038810887db9b89f7c4f0dd700d3024e64dd280",
-      "bytes": 21794
+      "path": "assets/img/whole-armour-galea-480.avif",
+      "sha256": "23465801c1494945fdb1bde3a619b2b96da6efbad22aa5b7079848fc29cd7801",
+      "bytes": 25771
     },
     {
-      "path": "assets/img/whole-armour-helmet-720.webp",
-      "sha256": "84dbb8f7ca7e049167cae7f4ce252266913a160b0ecc2bfccbb9eb6e5642e674",
-      "bytes": 30366
+      "path": "assets/img/whole-armour-galea-480.webp",
+      "sha256": "a6f2df695a61cfab75544beeaed062c526bfb308706e6c13c0fbcd83c14661db",
+      "bytes": 40158
     },
     {
-      "path": "assets/img/whole-armour-helmet-960.avif",
-      "sha256": "c9de328d59ea492790c695f8c20b08ada0ace69d00e197fdda8a6e8d0a91bd98",
-      "bytes": 34505
+      "path": "assets/img/whole-armour-galea-720.avif",
+      "sha256": "4a2c5216add02d16d8ef29e384f80b4704826593af5d9ba81353eabab00c1f77",
+      "bytes": 54854
     },
     {
-      "path": "assets/img/whole-armour-helmet-960.webp",
-      "sha256": "4f32cc59859dcd4dbd73a621cd8d247651eebab90bab8d3e4d62a755aba2313a",
-      "bytes": 50232
+      "path": "assets/img/whole-armour-galea-720.webp",
+      "sha256": "b6591244d536f614b64b98c7da4d90976fd966a62c00145e9b4ed6164fa51520",
+      "bytes": 81456
     },
     {
-      "path": "assets/img/whole-armour-shield-480.avif",
-      "sha256": "533bd3a07d4e59981516a2ec1acb85a849ef59cc38635d0f6a9b34b92a0bd223",
-      "bytes": 12189
+      "path": "assets/img/whole-armour-scutum-180.avif",
+      "sha256": "e2adc62bed444127f9fd8d34d2490a174e5b6b832db0a80abb0a2a4d5623570a",
+      "bytes": 5877
     },
     {
-      "path": "assets/img/whole-armour-shield-480.webp",
-      "sha256": "6f6b96f469e25624ec60a92e64b6535253dfe389dc769d937f50e9f79d016a2d",
-      "bytes": 18898
+      "path": "assets/img/whole-armour-scutum-180.webp",
+      "sha256": "cf384bccb52afa3635782be1492e8dfaa007fc85dfa488d1466e21ebd0bc8d41",
+      "bytes": 8480
     },
     {
-      "path": "assets/img/whole-armour-shield-720.avif",
-      "sha256": "48347be77ba6c521bb98f9c97d423d3c3784a6c04367f1642718793a0b1582df",
-      "bytes": 27812
+      "path": "assets/img/whole-armour-scutum-360.avif",
+      "sha256": "6e64e9d89a79dce96069f258054011a0f09ae3d65bd553be6e4cdf358c7fb173",
+      "bytes": 18334
     },
     {
-      "path": "assets/img/whole-armour-shield-720.webp",
-      "sha256": "e7000b9644405e2fb806be8f05a224361301bab9531245cc620274ef2bd8642d",
-      "bytes": 41454
+      "path": "assets/img/whole-armour-scutum-360.webp",
+      "sha256": "a6ffa009b7fb718a511af8ff658d5d8d05b36b0baffe184de3e2e909c062f945",
+      "bytes": 26560
     },
     {
-      "path": "assets/img/whole-armour-shield-960.avif",
-      "sha256": "87ab45aca316d0cbd067f1eb5f01dc0a6be897a62de79a5d91948058f432b0f5",
-      "bytes": 42768
+      "path": "assets/img/whole-armour-scutum-540.avif",
+      "sha256": "1118ff2995bab9bc57adbceef7b2fe90a6e97f16ad39ebec9edd07513a840e57",
+      "bytes": 44542
     },
     {
-      "path": "assets/img/whole-armour-shield-960.webp",
-      "sha256": "d4480e8c0bbf3e1d17e3bbf248c415c5faef0fb0ef1d2bdea025e2ba76ff782d",
-      "bytes": 66522
+      "path": "assets/img/whole-armour-scutum-540.webp",
+      "sha256": "43f11c27c386ff28a7ed0c07e4fa72e27a27e0acbfae0daada9609058b24e2f0",
+      "bytes": 60944
     },
     {
       "path": "assets/js/archive.js",
@@ -223,8 +223,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "0fbd278088d272b5ada42387016202824aaf7a8ee7c7422a3f00abed6850563d",
-      "bytes": 58165
+      "sha256": "6f42c4b970f47b152bbd22ac4a9723ef63c402571c36c5090c1f04b309d6f8c6",
+      "bytes": 60635
     },
     {
       "path": "lessons/identity-the-pattern-stops-here/files/2026-11-14-identity-the-pattern-stops-here.pdf",
